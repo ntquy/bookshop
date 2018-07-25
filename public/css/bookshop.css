@@ -1,0 +1,22 @@
+/** Admin Ccs **/
+
+.progress-bar{
+	width : 40%;
+}
+
+.list-inline .siteA{
+	color: #dadada;
+}
+
+.list-inline .siteB{
+	color: #aec9cb;
+}
+
+#morris-area-chart2{
+	height: 370px;
+}
+
+#side-menu li:first-child{
+	padding: 10px 0 0;
+}
+/** End Admin Css **/

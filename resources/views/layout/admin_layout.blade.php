@@ -23,12 +23,7 @@
     <link href="{!! asset('/bower_components/admin/css/style.css') !!}" rel="stylesheet">
     <!-- color CSS -->
     <link href="{!! asset('/bower_components/admin/css/colors/blue-dark.css') !!}" id="theme" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+    <link rel="stylesheet" type="text/css" href="{!! asset('/css/bookshop.css') !!}">
 </head>
 
 <body>
@@ -62,7 +57,7 @@
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                 <ul class="nav" id="side-menu">
-                    <li style="padding: 10px 0 0;">
+                    <li>
                         <a href="index.html" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
                     </li>
                     <li>
@@ -149,5 +144,4 @@
     });
     </script>
 </body>
-
 </html>
