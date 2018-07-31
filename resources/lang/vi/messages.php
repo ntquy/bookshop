@@ -51,5 +51,6 @@ return [
     'remember' => 'Ghi nhớ',
     'password' => 'Mật khẩu',
     'welcome' => 'Chào mừng',
-
+    'admin_login' => 'Bạn phải có quyền Admin để đăng nhập',
+    'is_correct' => 'Tài khoản hoặc mật khẩu không đúng',
 ];

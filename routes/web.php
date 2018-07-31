@@ -13,7 +13,7 @@
 
 
 Route::get('/', 'HomeController@index');
-Route::get('/dashboard', 'DashboardController@index');
+Route::get('/dashboard', 'DashboardController@index')->middleware('check');
 // Route::get('/login','LoginController@index');
 
 Auth::routes();

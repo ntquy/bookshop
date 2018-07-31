@@ -40,15 +40,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
            <!--form-stars-here-->
         <div class="wthree-form">
             <h2>{{ trans('messages.fill')}}</h2>
+            {{ session('notify')}}
             {!! Form::open(['url' => 'login', 'method' => 'post'])!!}
                 <div class="form-sub-w3">
-                    {!! Form::text( 'Username', null, [ 'required' => ''] ) !!}
+                    {{ Form::text('email', null, ['required'=>'']) }}
                 <div class="icon-w3">
                     <i class="fa fa-user" aria-hidden="true"></i>
                 </div>
                 </div>
                 <div class="form-sub-w3">
-                    {!! Form::password( 'Password', [ 'required' => ''] ) !!}
+                    {{ Form::password('password', ['required'=>'']) }}
                 <div class="icon-w3">
                     <i class="fa fa-unlock-alt" aria-hidden="true"></i>
                 </div>
