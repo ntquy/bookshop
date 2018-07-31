@@ -57,19 +57,17 @@
                 <section class="span6 e-commerce-list">
                     <ul>
                         <li>
-                            {{ trans('messages.welcome')}}
-                            <a href="/login">{{ trans('messages.login')}}</a> or 
-                            <a href="/register">{{ trans('messages.register')}}</a>
-                        </li>
-                        <li>
-                            <a href="#">$</a>
-                            <a href="#">£</a>
-                            <a href="#">€</a>
-                        </li>
-                        <li>
-                            <a href="#">eng</a>
-                            <a href="#">de</a>
-                            <a href="#">fr</a>
+                            @if( Auth::user() )
+                                {{ trans('messages.welcome') }}
+                                {{ Auth::user()->name }}
+                            @else
+                                <a href="{!! url( 'login' ) !!}">
+                                    {{ trans('messages.login')}}
+                                </a> or 
+                                <a href="{!! url( 'register' ) !!}">
+                                    {{ trans('messages.register')}}
+                                </a>
+                            @endif
                         </li>
                     </ul>
                     <div class="c-btn">

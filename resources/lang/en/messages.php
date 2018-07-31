@@ -51,6 +51,8 @@ return [
     'remember' => 'Remember me',
     'password' => 'Password',
     'welcome' => 'Welcome!',
+    'admin_login' => 'Must be Admin to login',
+    'is_correct' => 'Account or password is incorrect',
 
 ];
 
