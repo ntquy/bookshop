@@ -19,3 +19,5 @@ Route::get('/dashboard', 'DashboardController@index')->middleware('check');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/categories', 'CategoriesController@index')->name('categories');
