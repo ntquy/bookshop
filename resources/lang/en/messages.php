@@ -25,7 +25,7 @@ return [
     'new' => 'News',
     'contact' => 'Contact Us',
     'login' => 'Login',
-    'register' => 'Rigister',
+    'register' => 'Register',
     'cart' => 'Cart',
     'account' => 'My Account',
     'my_cart' => 'My Cart',
@@ -53,6 +53,13 @@ return [
     'welcome' => 'Welcome!',
     'admin_login' => 'Must be Admin to login',
     'is_correct' => 'Account or password is incorrect',
+    'username' => 'Username',
+    'name' => 'Name',
+    'address' => 'Address',
+    'phone' => 'Phone',
+    'confirm' => 'Confirm Password',
+    'birthday' => 'Birthday',
+    'search_book' => 'Search ...',
 
 ];
 

@@ -53,4 +53,11 @@ return [
     'welcome' => 'Chào mừng',
     'admin_login' => 'Bạn phải có quyền Admin để đăng nhập',
     'is_correct' => 'Tài khoản hoặc mật khẩu không đúng',
+    'username' => 'Tên đăng nhập',
+    'name' => 'Tên',
+    'address' => 'Địa chỉ',
+    'phone' => 'Số điện thoại',
+    'confirm' => 'Xác nhận mật khẩu',
+    'birthday' => 'Ngày sinh',
+    'search_book' => 'Tìm kiếm sách...',
 ];

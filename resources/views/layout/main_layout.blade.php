@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>{{ trans('messages.store')}}</title>
+        <title>@yield('title')</title>
         <meta http-equiv="cache-control" content="no-cache">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="UTF-8">
@@ -115,8 +115,8 @@
                         </li>
                     </ul>
                     <div class="search-bar">
-                        {{ Form::text( 'textSearch', null, [ 'placeholder' => '...' ])}}
-                        {{ Form::button('Search') }}
+                        {{ Form::text( 'textSearch', null, [ 'placeholder' => trans('messages.search_book') ])}}
+                        {{ Form::button('Search', ['class' => 'btn btn-primary']) }}
                     </div>
                 </section>
             </section>
@@ -344,11 +344,14 @@
     <script type="text/javascript" src="{!! asset('/bower_components/user/js/bookblock.js') !!}"></script><!-- Flip Slider -->
     <script type="text/javascript" src="{!! asset('/bower_components/user/js/custom.js') !!}"></script><!-- Custom js -->
     <script type="text/javascript" src="{!! asset('/bower_components/user/js/social.js') !!}"></script><!-- Social Icons -->
+    <script type="text/javascript" src="{!! asset('/js/bootstrap.min.js') !!}"></script>
+    <script type="text/javascript" src="{!! asset('/js/jquery-3.3.1.min.js') !!}"></script>
     <!-- JS Files End -->
     <script type="text/javascript">
       /* <![CDATA[ */
       $(document).ready(function() {
       $('.social_active').hoverdir( {} );
+      $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
     })
     /* ]]> */
     </script>
