@@ -64,6 +64,8 @@ return [
     'to' => 'to',
     'categories' => 'All categories',
     'categories_empty' => 'There is no category',
+    'edit' => 'Edit Profile',
+    'logout' => 'Logout',
 
 ];
 
