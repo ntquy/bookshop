@@ -34,7 +34,7 @@ return [
     'game' => 'Trò chơi',
     'letter' => 'Gửi thư',
     'location' => 'Địa chỉ',
-    'time' => 'THời gian mở cửa',
+    'time' => 'Thời gian mở cửa',
     'day' => 'Thứ 2 - Thứ 6',
     'day_7' => 'Thứ 7',
     'day_8' => 'Chủ nhật',
@@ -60,4 +60,8 @@ return [
     'confirm' => 'Xác nhận mật khẩu',
     'birthday' => 'Ngày sinh',
     'search_book' => 'Tìm kiếm sách...',
+    'or' => 'hoặc',
+    'to' => 'tới',
+    'categories' => 'Tất cả danh mục',
+    'categories_empty' => 'Không có danh mục nào',
 ];

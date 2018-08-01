@@ -63,7 +63,7 @@
                             @else
                                 <a href="{!! url( 'login' ) !!}">
                                     {{ trans('messages.login')}}
-                                </a> or 
+                                </a> {{ trans('messages.or') }}
                                 <a href="{!! url( 'register' ) !!}">
                                     {{ trans('messages.register')}}
                                 </a>
@@ -133,13 +133,13 @@
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li>
-                                <a href="grid-view.html">
-                                    {{ trans('messages.category')}}
+                                <a href={{ route('categories') }}>
+                                    {{ trans('messages.category') }}
                                 </a>
                             </li>
                             <li>
                                 <a href="grid-view.html">
-                                    {{ trans('messages.game')}}
+                                    {{ trans('messages.game') }}
                                 </a>
                             </li>
                         </ul>
@@ -196,15 +196,14 @@
                         {{ trans('messages.time')}}
                     </h4>
                     <p>
-                        {{ trans('messages.day')}} ______8.00 to 18.00
+                        {{ trans('messages.day')}} : 8:00 {{ trans('messages.to') }} 18:00
                     </p>
                     <p>
-                        {{ trans('messages.day_7')}} ____________ 9.00 to 18.00
+                        {{ trans('messages.day_7')}} : 9:00 {{ trans('messages.to') }} 18:00
                     </p>
                     <p>
-                        {{ trans('messages.day_8')}} _____________10.00 to 16.00
+                        {{ trans('messages.day_8')}} : 10:00 {{ trans('messages.to') }} 16:00
                     </p>
-                    <p>abcxyz</p>
                 </figure>
             </section>
         </section>

@@ -21,7 +21,7 @@ return [
     'error' => 'Error 404',
     'upgrade' => 'Upgrade to Pro',
     'home' => 'Home Page',
-    'online' => 'Oneline Store',
+    'online' => 'Online Store',
     'new' => 'News',
     'contact' => 'Contact Us',
     'login' => 'Login',
@@ -60,6 +60,10 @@ return [
     'confirm' => 'Confirm Password',
     'birthday' => 'Birthday',
     'search_book' => 'Search ...',
+    'or' => 'or',
+    'to' => 'to',
+    'categories' => 'All categories',
+    'categories_empty' => 'There is no category',
 
 ];
 
