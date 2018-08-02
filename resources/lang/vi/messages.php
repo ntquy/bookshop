@@ -64,4 +64,6 @@ return [
     'to' => 'tới',
     'categories' => 'Tất cả danh mục',
     'categories_empty' => 'Không có danh mục nào',
+    'edit' => 'Chỉnh sửa',
+    'logout' => 'Đăng xuất',
 ];

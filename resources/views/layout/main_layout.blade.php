@@ -33,7 +33,7 @@
                 <section class="span6">
                     <ul class="top-nav">
                         <li>
-                            <a href="#" class="active">
+                            <a href="{{ url( '/' )}}" class="active">
                                 {{ trans('messages.home')}}
                             </a>
                         </li>
@@ -58,28 +58,36 @@
                     <ul>
                         <li>
                             @if( Auth::user() )
-                                {{ trans('messages.welcome') }}
-                                {{ Auth::user()->name }}
+                                {{ trans('messages.welcome') }}        
+                                <div class="btn-group">
+                                    <button data-toggle="dropdown" class="btn btn-mini dropdown-toggle">{{ Auth::user()->name }}<span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">
+                                                {{ trans('messages.edit') }}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url( 'logout' ) }}">
+                                                {{ trans('messages.logout') }}
+                                            </a>
+                                        </li>
+                                  </ul>
+                                </div>
                             @else
                                 <a href="{!! url( 'login' ) !!}">
-                                    {{ trans('messages.login')}}
+                                    {{ trans('messages.login') }}
                                 </a> {{ trans('messages.or') }}
                                 <a href="{!! url( 'register' ) !!}">
-                                    {{ trans('messages.register')}}
+                                    {{ trans('messages.register') }}
                                 </a>
                             @endif
                         </li>
                     </ul>
                     <div class="c-btn">
                         <a href="cart.html" class="cart-btn">
-                            {{ trans('messages.cart')}}
+                            {{ trans('messages.cart') }}
                         </a>
-                        <div class="btn-group">
-                            <button data-toggle="dropdown" class="btn btn-mini dropdown-toggle">0 (s) - $0.00
-                                <span class="caret">
-                                </span>
-                            </button>
-                        </div>
                     </div>
                 </section>
             </section>
@@ -91,7 +99,7 @@
             <section class="row-fluid">
                 <section class="span4">
                     <h1 id="logo">
-                        <a href="#">
+                        <a href="{{ url( '/' ) }}">
                             <img src="{{ asset('/bower_components/user/images/logo.png')}}" />
                         </a>
                     </h1>
@@ -100,17 +108,17 @@
                     <ul class="top-nav2">
                         <li>
                             <a href="#">
-                                {{ trans('messages.account')}}
+                                {{ trans('messages.account') }}
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                {{ trans('messages.cart')}}
+                                {{ trans('messages.cart') }}
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                {{ trans('messages.order')}}
+                                {{ trans('messages.order') }}
                             </a>
                         </li>
                     </ul>
@@ -132,16 +140,13 @@
                     </button>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
+                        @foreach ($categories as $key => $cat)
                             <li>
-                                <a href={{ route('categories') }}>
-                                    {{ trans('messages.category') }}
+                                <a href={{ route( 'categories' ) }}>
+                                    {{ $cat->name}}
                                 </a>
                             </li>
-                            <li>
-                                <a href="grid-view.html">
-                                    {{ trans('messages.game') }}
-                                </a>
-                            </li>
+                        @endforeach
                         </ul>
                     </div>
                     <!--/.nav-collapse -->
@@ -162,7 +167,7 @@
             <section class="row-fluid">
                 <figure class="span3">
                     <h4>
-                        {{ trans('messages.letter')}}
+                        {{ trans('messages.letter') }}
                     </h4>
                     <p>abcxyz</p>
                     <input name="" type="text" class="field-bg" value="{{ trans('messages.email')}}"/>
@@ -177,7 +182,7 @@
                 </figure>
                 <figure class="span3">
                     <h4>
-                        {{ trans('messages.location')}}
+                        {{ trans('messages.location') }}
                     </h4>
                     <p>abcxyz</p>
                     <span>
@@ -193,16 +198,16 @@
                 </figure>
                 <figure class="span3">
                     <h4>
-                        {{ trans('messages.time')}}
+                        {{ trans('messages.time') }}
                     </h4>
                     <p>
-                        {{ trans('messages.day')}} : 8:00 {{ trans('messages.to') }} 18:00
+                        {{ trans('messages.day') }} : 8:00 {{ trans('messages.to') }} 18:00
                     </p>
                     <p>
-                        {{ trans('messages.day_7')}} : 9:00 {{ trans('messages.to') }} 18:00
+                        {{ trans('messages.day_7') }} : 9:00 {{ trans('messages.to') }} 18:00
                     </p>
                     <p>
-                        {{ trans('messages.day_8')}} : 10:00 {{ trans('messages.to') }} 16:00
+                        {{ trans('messages.day_8') }} : 10:00 {{ trans('messages.to') }} 16:00
                     </p>
                 </figure>
             </section>
@@ -245,13 +250,13 @@
                     </div>
                     <ul class="footer2-link">
                         <li>
-                            <a href="about-us.html">{{ trans('messages.about')}}</a>
+                            <a href="about-us.html">{{ trans('messages.about') }}</a>
                         </li>
                         <li>
-                            <a href="contact.html">{{ trans('messages.customer')}}</a>
+                            <a href="contact.html">{{ trans('messages.customer') }}</a>
                         </li>
                         <li>
-                            <a href="order-recieved.html">{{ trans('messages.track')}}</a>
+                            <a href="order-recieved.html">{{ trans('messages.track') }}</a>
                         </li>
                     </ul>
                 </section>
@@ -260,7 +265,7 @@
         <section class="container">
             <section class="row-fluid">
                 <figure class="span4">
-                    <h4>{{ trans('messages.seller')}}</h4>
+                    <h4>{{ trans('messages.seller') }}</h4>
                     <ul class="f2-img-list">
                         <li>
                             <div class="left">
@@ -279,7 +284,7 @@
                     </ul>
                 </figure>
                 <figure class="span4">
-                    <h4>{{ trans('messages.rate')}}</h4>
+                    <h4>{{ trans('messages.rate') }}</h4>
                     <ul class="f2-img-list">
                         <li>
                             <div class="left">
@@ -300,7 +305,7 @@
                     </ul>
                 </figure>
                 <figure class="span4">
-                    <h4>{{ trans('messages.blog')}}</h4>
+                    <h4>{{ trans('messages.blog') }}</h4>
                     <ul class="f2-pots-list">
                         <li>
                             <span class="post-date2">28 APR</span>
