@@ -66,4 +66,6 @@ return [
     'categories_empty' => 'Không có danh mục nào',
     'edit' => 'Chỉnh sửa',
     'logout' => 'Đăng xuất',
+    'update' => 'Cập nhật',
+    'notify_update' => 'Đã cập nhật',
 ];

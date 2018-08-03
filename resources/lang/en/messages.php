@@ -66,6 +66,8 @@ return [
     'categories_empty' => 'There is no category',
     'edit' => 'Edit Profile',
     'logout' => 'Logout',
+    'update' => 'Update',
+    'notify_update' => 'The user has been updated!',
 
 ];
 

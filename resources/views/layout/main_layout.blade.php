@@ -63,7 +63,7 @@
                                     <button data-toggle="dropdown" class="btn btn-mini dropdown-toggle">{{ Auth::user()->name }}<span class="caret"></span></button>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a href="#">
+                                            <a href="{{ url( '/users/edit').'/'. Auth::user()->id }}">
                                                 {{ trans('messages.edit') }}
                                             </a>
                                         </li>
