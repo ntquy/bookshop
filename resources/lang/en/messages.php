@@ -67,6 +67,7 @@ return [
     'edit' => 'Edit Profile',
     'logout' => 'Logout',
     'update' => 'Update',
+    'notify_update' => 'The user has been updated!',
 
 ];
 

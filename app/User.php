@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -48,5 +49,14 @@ class User extends Authenticatable
     public function rates()
     {
         return $this->hasMany('App\Rate', 'user_id');
+    }
+
+    public function scopeUpdate($arr)
+    {
+        if($arr['password'] != '')
+        {
+            $arr['password'] = Hash::make($arr['password']);
+        }
+        $this->save($arr);
     }
 }

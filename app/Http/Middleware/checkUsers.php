@@ -19,8 +19,8 @@ class checkUsers
         if(Auth::check())
         {
             return $next($request);
-        }
-        else
+        } else {
             return redirect( 'register' );
+        }
     }
 }
