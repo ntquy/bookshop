@@ -22,6 +22,8 @@ class CreateBooksTable extends Migration
             $table->text('image');
             $table->integer('publisher_id');
             $table->integer('promotion_id');
+            $table->string('summary');
+            $table->text('content');
             $table->timestamps();
         });
     }

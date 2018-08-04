@@ -23,7 +23,7 @@
                                     <span class="rating-bar"> <img src="images/raing-star2.png" alt="Rating Star" /> </span>
                                     <a href="book-detail.html" class="shop-btn">{{ trans('messages.shop_now') }} </a>
                                     <div class="cap-holder">
-                                        <p><img src="images/image27.png" alt="Best Choice" align="right"/> aaaa </p>
+                                        <p><img src="images/image27.png" alt="Best Choice" align="right"/> {{ $rate->summary}} </p>
                                         <a href="book-detail.html">{{ trans('messages.read_more') }}</a>
                                     </div>
                                 </div>
@@ -55,7 +55,7 @@
             </div>
             <article class="s-product-det">
                 <h3><a href="book-detail.html">{{ $sale->name }}</a></h3>
-                <p>bbbb</p>
+                <p>{{ $sale->summary }}</p>
                 <span class="rating-bar">
                     <img src="images/rating-star.png" alt="Rating Star"/>
                 </span>
