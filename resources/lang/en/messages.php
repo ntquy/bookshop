@@ -76,5 +76,6 @@ return [
     'next' => 'Next',
     'previous' => 'Previous',
     'new_book' => 'New Books',
+    'sale' => 'Sale',
 ];
 

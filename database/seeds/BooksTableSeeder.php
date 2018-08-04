@@ -13,17 +13,19 @@ class BooksTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
 
-        $limit = 10;
+        $limit = 50;
 
         for ($i = 0; $i < $limit; $i++) {
             DB::table('books')->insert([
                 'name' => $faker->name,
-                'author' => 'Nguyen Du',
-                'quantity' => 20,
-                'price' => 100000,
+                'author' => $faker->name,
+                'quantity' => $faker->numberBetween($min = 1, $max =1000),
+                'price' => $faker->numberBetween($min = 50000, $max = 500000),
                 'image' => $faker->image,
-                'publisher_id' => 1,
-                'promotion_id' => 2,
+                'publisher_id' => $faker->numberBetween($min = 1, $max = 4),
+                'promotion_id' => $faker->numberBetween($min = 1, $max = 4),
+                'summary' => $faker->text($maxNbChars = 50),
+                'content' => $faker->realText($maxNbChars = 300, $indexSize = 2)
             ]);
         }
     }

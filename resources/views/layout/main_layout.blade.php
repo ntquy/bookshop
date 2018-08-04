@@ -147,6 +147,11 @@
                                 </a>
                             </li>
                         @endforeach
+                            <li>
+                                <a href="#">
+                                    {{ trans('messages.sale')}}
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->

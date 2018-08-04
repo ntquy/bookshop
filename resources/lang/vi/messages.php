@@ -76,5 +76,6 @@ return [
     'next' => 'Sau',
     'previous' => 'Trước',
     'new_book' => 'Sách mới',
+    'sale' => 'Giảm giá',
 
 ];
