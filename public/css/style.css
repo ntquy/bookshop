@@ -20,3 +20,15 @@
     #datepicker > span:hover {
         cursor: pointer;
     }
+    .image1 {
+        width: 244px;
+        height: 325px;
+    }
+    .image2 {
+        width: 87px;
+        height: 128px;
+    }
+    .image3 {
+        width: 140px;
+        height: 207px;
+    }

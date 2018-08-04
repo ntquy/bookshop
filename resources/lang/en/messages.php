@@ -68,6 +68,13 @@ return [
     'logout' => 'Logout',
     'update' => 'Update',
     'notify_update' => 'The user has been updated!',
-
+    'bookshop' => 'WELCOME TO BookShoppe’',
+    'love_book' => 'Offering a wide selection of books on thousands of topics at low prices to satisfy any book-lover!',
+    'add_cart' => 'Add to Cart',
+    'shop_now' => 'SHOP NOW',
+    'read_more' => 'Read More',
+    'next' => 'Next',
+    'previous' => 'Previous',
+    'new_book' => 'New Books',
 ];
 

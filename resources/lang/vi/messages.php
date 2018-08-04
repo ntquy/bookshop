@@ -68,4 +68,13 @@ return [
     'logout' => 'Đăng xuất',
     'update' => 'Cập nhật',
     'notify_update' => 'Đã cập nhật',
+    'bookshop' => 'Chào mừng bạn đến với Bookshoppe’',
+    'love_book' => 'Cung cấp nhiều lựa chọn sách với hàng nghìn chủ đề với mức giá thấp để đáp ứng nhu cầu của những người yêu sách!',
+    'add_cart' => 'Thêm vào giỏ hàng',
+    'shop_now' => 'Mua ngay',
+    'read_more' => 'Xem thêm',
+    'next' => 'Sau',
+    'previous' => 'Trước',
+    'new_book' => 'Sách mới',
+
 ];
