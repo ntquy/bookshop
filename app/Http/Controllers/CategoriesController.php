@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\Book;
+use DB;
 
 class CategoriesController extends Controller
 {
@@ -12,9 +14,14 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $categories = Category::all();
+        $categories = DB::table('books')
+                      ->select('books.*')
+                      ->join('category_book', 'books.id', '=', 'category_book.book_id')
+                      ->join('categories', 'categories.id', '=', 'category_book.category_id')
+                      ->where('categories.id', '=', $id)
+                      ->paginate(9);
 
         return view('categories.index', compact('categories'));
     }

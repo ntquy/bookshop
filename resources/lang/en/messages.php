@@ -77,5 +77,13 @@ return [
     'previous' => 'Previous',
     'new_book' => 'New Books',
     'sale' => 'Sale',
+    'grid_view' => 'Grid View',
+    'list_view' => 'List View',
+    'view_as' => 'View as',
+    'shop_by' => 'Shop by',
+    'price' => 'Price',
+    'author' => 'Author',
+    'price_range' => 'Price range',
+    'select_price' => 'Select the price range for better search',
 ];
 

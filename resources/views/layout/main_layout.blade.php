@@ -140,15 +140,15 @@
                     </button>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                        @foreach ($categories as $key => $cat)
+                        @foreach ($categories as $cat)
                             <li>
-                                <a href={{ route( 'categories' ) }}>
+                                <a href="{{ url( '/categories') .'/'.$cat->id }}">
                                     {{ $cat->name}}
                                 </a>
                             </li>
                         @endforeach
                             <li>
-                                <a href="#">
+                                <a href="{{ url('/sale') }}">
                                     {{ trans('messages.sale')}}
                                 </a>
                             </li>
