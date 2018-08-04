@@ -77,5 +77,12 @@ return [
     'previous' => 'Trước',
     'new_book' => 'Sách mới',
     'sale' => 'Giảm giá',
-
+    'grid_view' => 'Dạng lưới',
+    'list_view' => 'Dạng danh sách',
+    'view_as' => 'Chế độ xem',
+    'shop_by' => 'Mua theo',
+    'price' => 'Giá',
+    'author' => 'Tác giả',
+    'price_range' => 'Phạm vi giá',
+    'select_price' => 'Chọn phạm vi giá cho tìm kiếm tốt hơn',
 ];
