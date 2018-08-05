@@ -25,8 +25,13 @@
 			<section class="grid-holder features-books">
 			@foreach($books_sale as $sale)
 				<figure class="span4 slide first ">
+<<<<<<< HEAD
 					<a href="{{ url('/book-detail').'/'.$sale->id }}"><img class="image4" src="{{ $sale->image }}" alt="" class="pro-img"/></a>
 					<span class="title"><a href="{{ url('/book-detail').'/'.$sale->id }}">{{ $sale->name }}</a></span>
+=======
+					<a href="book-detail.html"><img class="image4" src="{{ $sale->image }}" alt="" class="pro-img"/></a>
+					<span class="title"><a href="book-detail.html">{{ $sale->name }}</a></span>
+>>>>>>> 1ed52846310b3ef59dcd0b35a8d829bc694b65f9
 					<span class="title">{{ $sale->author }}</span>
 					<span class="rating-bar"><img src="/images/rating-star.png" alt="Rating Star"/></span>
 					<div class="cart-price">
