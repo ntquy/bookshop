@@ -25,8 +25,8 @@
 			<section class="grid-holder features-books">
 			@foreach($categories as $key => $cat)
 				<figure class="span4 slide first ">
-					<a href="book-detail.html"><img class="image4" src="{{ $cat->image }}" alt="" class="pro-img"/></a>
-					<span class="title"><a href="book-detail.html">{{ $cat->name }}</a></span>
+					<a href="{{ url('/book-detail').'/'.$cat->id }}"><img class="image4" src="{{ $cat->image }}" alt="" class="pro-img"/></a>
+					<span class="title"><a href="{{ url('/book-detail').'/'.$cat->id }}">{{ $cat->name }}</a></span>
 					<span class="title">{{ $cat->author }}</span>
 					<span class="rating-bar"><img src="/images/rating-star.png" alt="Rating Star"/></span>
 					<div class="cart-price">
@@ -38,6 +38,7 @@
 					<span class="sale-icon">Sale</span>
 						@else
 						<span class="price">{{ number_format($cat->price) }} vnd</span>
+					</div>
 						@endif
 				</figure>
 			@endforeach

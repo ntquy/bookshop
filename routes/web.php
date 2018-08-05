@@ -25,3 +25,4 @@ Route::group(['prefix' => 'users', 'middleware' => 'checkUsers'], function() {
 });
 Route::get('/sale', 'SaleController@index');
 Route::get('/search', 'HomeController@getSearch');
+Route::get('/book-detail/{id?}', 'BooksController@getBooks');
