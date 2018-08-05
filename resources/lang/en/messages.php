@@ -85,5 +85,8 @@ return [
     'author' => 'Author',
     'price_range' => 'Price range',
     'select_price' => 'Select the price range for better search',
+    'book_sale' => 'Book Sale',
+    'next' => 'Next',
+    'prev' => 'Prev',
 ];
 

@@ -16,6 +16,10 @@ class CategoriesController extends Controller
      */
     public function index($id)
     {
+        $category = DB::table('categories')
+                    ->select('categories.*')
+                    ->where('categories.id', '=', $id)
+                    ->get();
         $categories = DB::table('books')
                       ->select('books.*')
                       ->join('category_book', 'books.id', '=', 'category_book.book_id')
@@ -23,7 +27,7 @@ class CategoriesController extends Controller
                       ->where('categories.id', '=', $id)
                       ->paginate(9);
 
-        return view('categories.index', compact('categories'));
+        return view('categories.index', ['category' => $category[0], 'categories' => $categories ]);
     }
 
     /**

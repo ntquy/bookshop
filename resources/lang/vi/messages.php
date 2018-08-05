@@ -85,4 +85,7 @@ return [
     'author' => 'Tác giả',
     'price_range' => 'Phạm vi giá',
     'select_price' => 'Chọn phạm vi giá cho tìm kiếm tốt hơn',
+    'book_sale' => 'Sách giảm giá',
+    'next' => 'Sau',
+    'prev' => 'Trước',
 ];
