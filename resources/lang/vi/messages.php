@@ -88,4 +88,5 @@ return [
     'book_sale' => 'Sách giảm giá',
     'next' => 'Sau',
     'prev' => 'Trước',
+    'result_search' => 'Kết quả tìm kiếm',
 ];
