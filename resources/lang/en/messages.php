@@ -88,5 +88,6 @@ return [
     'book_sale' => 'Book Sale',
     'next' => 'Next',
     'prev' => 'Prev',
+    'result_search' => 'Result Search',
 ];
 

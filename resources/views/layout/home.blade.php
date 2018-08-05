@@ -61,7 +61,8 @@
                 </span>
                 <div class="cart-price">
                     <a href="cart.html" class="cart-btn2">{{ trans('messages.add_cart') }}</a>
-                    <span class="price">{{ number_format($sale->price) }} vnd</span>
+                    <span class="price"><del class="price_sale">{{ number_format($sale->price) }} vnd</del></span>
+                    <span class="price">{{ number_format(($sale->price * (100 - $sale->value))/100) }} vnd</span>
                 </div>
                 <span class="sale-icon">Sale</span>
             </article>
@@ -78,7 +79,8 @@
             <div class="slider1">
         @foreach($books_new as $new)
             <div class="slide"> <a href="book-detail.html">
-                <img class="image3" src="{{ $new->image }}" alt="" class="pro-img"/></a><span class="title"><a href="book-detail.html">{{ $new->name }}</a></span>
+                <img class="image3" src="{{ $new->image }}" alt="" class="pro-img"/></a><span class="title"><strong><a href="book-detail.html">{{ $new->name }}</a></strong></span>
+                <span class="title">{{ $new->author }}</span>
                 <span class="rating-bar"><img src="images/rating-star.png" alt="Rating Star"/></span>
             <div class="cart-price">
                 <a class="cart-btn2" href="cart.html">{{ trans('messages.add_cart') }}</a>

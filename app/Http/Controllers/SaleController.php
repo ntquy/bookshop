@@ -13,7 +13,7 @@ class SaleController extends Controller
     	$books_sale = DB::table('books')
 					->select('books.*', 'promotions.value')
 					->join('promotions', 'promotions.id', '=', 'books.promotion_id')
-                    ->where('promotion_id', '<>', 0)
+                    ->where('promotion_id', '<>', 1)
                     ->orderBy('id', 'desc')
                     ->paginate(9);
 
