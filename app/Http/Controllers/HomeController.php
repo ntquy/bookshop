@@ -29,7 +29,9 @@ class HomeController extends Controller
     {
         $book_rate = DB::select("SELECT books.*, AVG(rates.star) as avgStar FROM books INNER JOIN rates ON rates.book_id = books.id GROUP BY books.name ORDER BY avgStar DESC limit 0,3");
         $book_sale = DB::table('books')
-                        ->where('promotion_id', '<>', 0)
+                        ->select('books.*', 'promotions.value')
+                        ->join('promotions', 'promotions.id', '=', 'books.promotion_id')
+                        ->where('promotion_id', '<>', 1)
                         ->orderBy('id', 'desc')
                         ->limit(3)
                         ->get();
@@ -42,5 +44,16 @@ class HomeController extends Controller
         Auth::logout();
         
         return redirect('/');
+    }
+    public function getSearch(Request $request)
+    {
+        $result = DB::table('books')
+                    ->select('books.*', 'promotions.value')
+                    ->join('promotions', 'promotions.id', '=', 'books.promotion_id')
+                    ->where('name', 'like', '%'.$request->key.'%')
+                    ->orWhere('author', 'like', '%'.$request->key.'%')
+                    ->paginate(9);
+
+        return view('layout.search', compact('result'));
     }
 }
