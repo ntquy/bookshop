@@ -15,7 +15,7 @@ class SaleController extends Controller
 					->join('promotions', 'promotions.id', '=', 'books.promotion_id')
                     ->where('promotion_id', '<>', 1)
                     ->orderBy('id', 'desc')
-                    ->paginate(9);
+                    ->paginate(config('view.pagination'));
 
         return view('sale.index', compact('books_sale') );
     }

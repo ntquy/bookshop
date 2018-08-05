@@ -105,6 +105,8 @@ return [
     'your_review' => 'Your review',
     'you_rate' => 'How do you rate this book?',
     'star' => 'Star',
+    'available' => 'Available',
+    'sold_out' => 'Sold out',
     'product_name' => 'Product name',
     'unit' => 'Unit price',
     'subtotal' => 'Subtotal',

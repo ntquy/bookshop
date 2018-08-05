@@ -52,7 +52,7 @@ class HomeController extends Controller
                 ->join('promotions', 'promotions.id', '=', 'books.promotion_id')
                 ->where('name', 'like', '%'.$request->key.'%')
                 ->orWhere('author', 'like', '%'.$request->key.'%')
-                ->paginate(9);
+                ->paginate(config('view.pagination'));
 
         return view('layout.search', compact('result'));
     }
