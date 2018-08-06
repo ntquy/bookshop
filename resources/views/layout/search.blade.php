@@ -25,8 +25,8 @@
 			<section class="grid-holder features-books">
 			@foreach($result as $search)
 				<figure class="span4 slide first ">
-					<a href="book-detail.html"><img class="image4" src="{{ $search->image }}" alt="" class="pro-img"/></a>
-					<span class="title"><a href="book-detail.html">{{ $search->name }}</a></span>
+					<a href="{{ url('/book-datail').'/'.$search->id }}"><img class="image4" src="{{ $search->image }}" alt="" class="pro-img"/></a>
+					<span class="title"><a href="{{ url('/book-datail').'/'.$search->id }}">{{ $search->name }}</a></span>
 					<span class="title">{{ $search->author }}</span>
 					<span class="rating-bar"><img src="/images/rating-star.png" alt="Rating Star"/></span>
 					<div class="cart-price">
