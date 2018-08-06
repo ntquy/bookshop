@@ -123,7 +123,7 @@
                         </li>
                     </ul>
                     <div class="search-bar">
-                    {{ Form::open(['url' => '/search', 'method' => 'get'])}}
+                    {{ Form::open(['url' => '/search', 'method' => 'get']) }}
                         {{ Form::text('key', null, [ 'placeholder' => trans('messages.search_book') ])}}
                         {{ Form::submit('Search', ['class' => 'btn btn-primary']) }}
                     {{ Form::close() }}

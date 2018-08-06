@@ -47,3 +47,27 @@
         width: 140px;
         height: 207px;
     }
+    .table {
+        width: 100%;
+        border: 0 ;
+        cellpadding: 10px;
+    }
+    .th1 {
+        width: 14%;
+    }
+    .th2 {
+        width: 10%;
+        text-align: left;
+    }
+    .th3 {
+        width: 10%;
+    }
+    .th4 {
+        width: 6%;
+    }
+    .th5 {
+        width: 12%;
+    }
+    .th6 {
+        width: 5%;
+    }

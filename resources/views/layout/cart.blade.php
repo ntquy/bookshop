@@ -9,37 +9,26 @@
 			<h2>{{ trans('messages.cart') }}</h2>
 		</div>
 		<div class="cart-table-holder">
-			<table width="100%" border="0" cellpadding="10">
+			<table class="table">
 				<tr>
-					<th width="14%">&nbsp;</th>
-					<th width="43%" align="left">{{ trans('messages.product_name') }}</th>
-					<th width="10%">{{ trans('messages.unit') }}</th>
-					<th width="10%">{{ trans('messages.quantity') }}</th>
-					<th width="6%"></th>
-					<th width="12%">{{ trans('messages.subtotal') }}</th>
-					<th width="5%">&nbsp;</th>
+					<th class="th1">&nbsp;</th>
+					<th class="th2">{{ trans('messages.product_name') }}</th>
+					<th class="th3">{{ trans('messages.unit') }}</th>
+					<th class="th3">{{ trans('messages.quantity') }}</th>
+					<th class="th4"></th>
+					<th class="th5">{{ trans('messages.subtotal') }}</th>
+					<th class="th6">&nbsp;</th>
 				</tr>
 			  	@foreach($content as $item)
 			  	<tr bgcolor="#FFFFFF" class=" product-detail">
 					<td valign="top"><img class="image6" src="{{ $item->options['img'] }}" /></td>
 					<td valign="top"><strong>{{ $item->name }}</strong></td>
-					<td align="center" valign="top">
-						@if($item->options['promotion_id'] > 1)
-							{{ number_format((($item->price) * (100 - $item->promotion)) / 100) }} vnd 
-						@else {{ number_format($item->price) }} vnd 
-						@endif
-					</td>
+					<td align="center" valign="top">{{ number_format($item->price) }} vnd </td>
 					{{ Form::open(['url' => route('updateCart', ['id' => $item->rowId]), 'method' => 'post']) }}
 					<td align="center" valign="top">{{ Form::text('quantity', $item->qty ) }}</td>
 					<td align="center" valign="top">{{ Form::submit(trans('messages.update'),['class' => 'btn btn-link']) }}</td>
 					{{ Form::close() }}
-					<td align="center" valign="top">
-						@if($item->options['promotion_id'] = 1) 
-							{{ number_format($item->price * $item->qty) }} vnd 
-						@else 
-							{{ number_format(((($item->price) * (100 - $item->promotion))/100) * $item->qty) }} vnd 
-						@endif
-					</td>
+					<td align="center" valign="top">{{ number_format($item->price * $item->qty) }} vnd </td>
 					<td align="center" valign="top"><a href="{{ url('/deleteCart'.'/'.$item->rowId) }}"> <i class="icon-trash"></i></a></td>
 			  	</tr>
 			  	@endforeach
@@ -86,7 +75,7 @@
 				<h4><i class="icon-money"></i> {{ trans('messages.discount_code') }}</h4>
 				<p>{{ trans('messages.coupon') }}</p>
 				<input type="text" id="inputDiscount" placeholder="">
-				<br / class="clearfix">
+				<br class="clearfix">
 			</div>
 		</figure>
 		<figure class="span4 price-total">
@@ -102,6 +91,5 @@
 			</div>
 		</figure>
 	</section>
-		<!-- End Main Content -->
 </section>
 @endsection
