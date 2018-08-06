@@ -85,7 +85,7 @@
                         </li>
                     </ul>
                     <div class="c-btn">
-                        <a href="cart.html" class="cart-btn">
+                        <a href="{{ url( '/cart' ) }}" class="cart-btn">
                             {{ trans('messages.cart') }}
                         </a>
                     </div>
@@ -123,8 +123,8 @@
                         </li>
                     </ul>
                     <div class="search-bar">
-                    {{ Form::open(['url' => ' /search ', 'method' => 'get'])}}
-                        {{ Form::text( 'key', null, [ 'placeholder' => trans('messages.search_book') ])}}
+                    {{ Form::open(['url' => '/search', 'method' => 'get']) }}
+                        {{ Form::text('key', null, [ 'placeholder' => trans('messages.search_book') ])}}
                         {{ Form::submit('Search', ['class' => 'btn btn-primary']) }}
                     {{ Form::close() }}
                     </div>

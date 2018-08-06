@@ -30,7 +30,7 @@
 					<span class="title">{{ $search->author }}</span>
 					<span class="rating-bar"><img src="/images/rating-star.png" alt="Rating Star"/></span>
 					<div class="cart-price">
-						<a class="cart-btn2" href="cart.html">{{ trans('messages.add_cart') }}</a>
+						<a class="cart-btn2" href="{{ url('/cart').'/'.$search->id }}">{{ trans('messages.add_cart') }}</a>
 						@if( $search->promotion_id > 1 )
 						<span class="price"><del class="price_sale">{{ number_format($search->price) }} vnd</del></span>
 						<span class="price">{{ number_format(($search->price * (100 - $search->value))/100) }} vnd</span>
@@ -62,7 +62,7 @@
 				
 				<ul class="product_view">
 					<li>View as:</li>
-					<li><a class="grid-view" href="cart.html">{{ trans('messages.grid_view') }}</a></li>
+					<li><a class="grid-view" href="{{ url('/cart').'/'.$search->id }}">{{ trans('messages.grid_view') }}</a></li>
 					<li><a class="list-view" href="list-view.html">{{ trans('messages.list_view') }}</a></li>
 			   </ul>
 			</div>

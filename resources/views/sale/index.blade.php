@@ -25,17 +25,12 @@
 			<section class="grid-holder features-books">
 			@foreach($books_sale as $sale)
 				<figure class="span4 slide first ">
-<<<<<<< HEAD
 					<a href="{{ url('/book-detail').'/'.$sale->id }}"><img class="image4" src="{{ $sale->image }}" alt="" class="pro-img"/></a>
 					<span class="title"><a href="{{ url('/book-detail').'/'.$sale->id }}">{{ $sale->name }}</a></span>
-=======
-					<a href="book-detail.html"><img class="image4" src="{{ $sale->image }}" alt="" class="pro-img"/></a>
-					<span class="title"><a href="book-detail.html">{{ $sale->name }}</a></span>
->>>>>>> 1ed52846310b3ef59dcd0b35a8d829bc694b65f9
 					<span class="title">{{ $sale->author }}</span>
 					<span class="rating-bar"><img src="/images/rating-star.png" alt="Rating Star"/></span>
 					<div class="cart-price">
-						<a class="cart-btn2" href="cart.html">{{ trans('messages.add_cart') }}</a>
+						<a class="cart-btn2" href="{{ url('/cart').'/'.$sale->id }}">{{ trans('messages.add_cart') }}</a>
 						<span class="price"><del class="price_sale">{{ number_format($sale->price) }} vnd</del></span>
 						<span class="price">{{ number_format(($sale->price * (100 - $sale->value))/100) }} vnd</span>
 					</div>
@@ -63,7 +58,7 @@
 				
 				<ul class="product_view">
 					<li>View as:</li>
-					<li><a class="grid-view" href="cart.html">{{ trans('messages.grid_view') }}</a></li>
+					<li><a class="grid-view" href="grid.html">{{ trans('messages.grid_view') }}</a></li>
 					<li><a class="list-view" href="list-view.html">{{ trans('messages.list_view') }}</a></li>
 			   </ul>
 			</div>

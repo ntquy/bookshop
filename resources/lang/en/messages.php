@@ -105,5 +105,16 @@ return [
     'your_review' => 'Your review',
     'you_rate' => 'How do you rate this book?',
     'star' => 'Star',
+    'product_name' => 'Product name',
+    'unit' => 'Unit price',
+    'subtotal' => 'Subtotal',
+    'grand' => 'Tổng cộng',
+    'shipping' => 'Infomation Ship',
+    'discount_code' => 'Discount Code',
+    'destination' => 'Enter your destination to get a shipping estimate.',
+    'coupon' => 'Enter your coupon code if you have one.',
+    'name_ship' => 'Recipient`s name',
+    'proceed' => 'PROCEED TO CHECKOUT',
+
 ];
 

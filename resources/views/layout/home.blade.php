@@ -13,7 +13,7 @@
                                 <div class="span4 book-holder">
                                     <a href="{{ url('/book-detail').'/'.$rate->id }}"><img class="image1" src="{{ $rate->image }}" alt="Book" /></a>
                                     <div class="cart-price">
-                                        <a class="cart-btn2" href="cart.html">{{ trans('messages.add_cart') }}</a>
+                                        <a class="cart-btn2" href="{{ url('/cart').'/'.$rate->id }}">{{ trans('messages.add_cart') }}</a>
                                         <span class="price">{{ number_format($rate->price) }} vnd</span>
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
                     <img src="images/rating-star.png" alt="Rating Star"/>
                 </span>
                 <div class="cart-price">
-                    <a href="cart.html" class="cart-btn2">{{ trans('messages.add_cart') }}</a>
+                    <a href="{{ url('/cart').'/'.$sale->id }}" class="cart-btn2">{{ trans('messages.add_cart') }}</a>
                     <span class="price"><del class="price_sale">{{ number_format($sale->price) }} vnd</del></span>
                     <span class="price">{{ number_format(($sale->price * (100 - $sale->value))/100) }} vnd</span>
                 </div>
@@ -83,7 +83,7 @@
                 <span class="title">{{ $new->author }}</span>
                 <span class="rating-bar"><img src="images/rating-star.png" alt="Rating Star"/></span>
             <div class="cart-price">
-                <a class="cart-btn2" href="cart.html">{{ trans('messages.add_cart') }}</a>
+                <a class="cart-btn2" href="{{ url('/cart').'/'.$new->id }}">{{ trans('messages.add_cart') }}</a>
                 <span class="price">{{ number_format($new->price) }} vnd</span>
             </div>
             </div>
