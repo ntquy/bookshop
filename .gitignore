@@ -13,3 +13,4 @@ yarn-error.log
 .env
 composer.json
 /public/bower_components
+composer.lock

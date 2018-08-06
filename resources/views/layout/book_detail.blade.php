@@ -45,7 +45,7 @@
 								@else
 								<li class="b-price">{{ number_format((($books->price) * (100-$books->value))/100) }} vnd</li>
 								@endif
-								<li><a href="cart.html" class="more-btn">+ {{ trans('messages.to_cart') }}</a></li>
+								<li><a href="{{ url('/cart').'/'.$books->id }}" class="more-btn">+ {{ trans('messages.to_cart') }}</a></li>
 							</ul>
 						</div>
 				   </div>
@@ -79,7 +79,7 @@
 					<span class="title">{{ $catbook->author }}</span>
 					<span class="rating-bar"><img src="/images/rating-star.png" alt="Rating Star"/></span>
 					<div class="cart-price">
-						<a class="cart-btn2" href="cart.html">{{ trans('messages.add_cart') }}</a>
+						<a class="cart-btn2" href="{{ url('/cart').'/'.$catbook->id }}">{{ trans('messages.add_cart') }}</a>
 						@if( $catbook->promotion_id > 1 )
 						<span class="price"><del class="price_sale">{{ number_format($catbook->price) }} vnd</del></span>
 						<span class="price">{{ number_format(($catbook->price * (100 - $catbook->value))/100) }} vnd</span>
@@ -131,9 +131,9 @@
 							<div class="rating-list">
 								<div class="rating-box">
 									<label class="radio">
-									<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+										<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
 									1 {{ trans('messages.star') }}
-								</label>
+									</label>
 								</div>
 								<label class="radio">
 									<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
