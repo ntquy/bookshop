@@ -56,4 +56,8 @@ class HomeController extends Controller
 
         return view('layout.search', compact('result'));
     }
+    public function contact()
+    {
+        return view('layout.contact');
+    }
 }

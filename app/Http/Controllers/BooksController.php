@@ -16,10 +16,9 @@ class BooksController extends Controller
 				->where('books.id', '=', $id)
 				->get();
         $comments = DB::table('books')
-                ->select('books.*', 'comments.content', 'users.name', 'rates.star')
+                ->select('books.*', 'comments.content', 'users.name')
                 ->join('comments', 'books.id', '=', 'comments.book_id')
                 ->join('users', 'users.id', '=', 'comments.user_id')
-                ->join('rates', 'books.id', '=', 'rates.book_id')
                 ->where('books.id', '=', $id)
                 ->get();
     	$books_cat = DB::select("SELECT b1.* , promotions.value 

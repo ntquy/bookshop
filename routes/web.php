@@ -31,3 +31,4 @@ Route::get('/cart/{id?}', 'CartController@getCart');
 Route::get('/deleteCart/{id?}', 'CartController@remove');
 Route::post('/updateCart/{id?}', 'CartController@update')->name('updateCart');
 Route::post('/comment/{id_book?}/{id_user?}', 'RateCommentController@rateComment')->name('rateComment');
+Route::get('/contact', 'HomeController@contact');

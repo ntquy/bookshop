@@ -103,7 +103,7 @@
 					<ul class="review-list">
 					@foreach($comments as $com)
 						<li>
-							<em class="">{{ $com->name }} - ({{ $com->star }} {{trans('messages.star')}}) </em>
+							<em class="">{{ $com->name }}</em>
 							<p>{{ $com->content }}</p>
 						</li>
 					@endforeach

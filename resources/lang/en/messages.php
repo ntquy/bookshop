@@ -116,6 +116,8 @@ return [
     'name_ship' => 'Recipient`s name',
     'proceed' => 'PROCEED TO CHECKOUT',
     'must_login' => 'You must Login',
-
+    'contact_info' => 'Contact Info',
+    'slogan' => 'Slogan',
+    'make' => 'MAKE IT AWESOME',
 ];
 
