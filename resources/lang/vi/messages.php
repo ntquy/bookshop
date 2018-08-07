@@ -116,4 +116,7 @@ return [
     'name_ship' => 'Tên người nhận',
     'proceed' => 'ĐẶT HÀNG',
     'you_must' => 'Bạn phải đăng nhập để có thể đánh giá',
+    'contact_info' => 'Thông tin liên hệ',
+    'slogan' => 'Slogan',
+    'make' => 'MAKE IT AWESOME',
 ];

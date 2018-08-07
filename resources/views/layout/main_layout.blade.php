@@ -33,22 +33,12 @@
                 <section class="span6">
                     <ul class="top-nav">
                         <li>
-                            <a href="{{ url( '/' )}}" class="active">
+                            <a href="{{ url( '/' ) }}" class="active">
                                 {{ trans('messages.home')}}
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                {{ trans('messages.online')}}
-                            </a>
-                        </li> 
-                        <li>
-                            <a href="#">
-                                {{ trans('messages.new')}}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                            <a href="{{ url( '/contact' ) }}">
                                 {{ trans('messages.contact')}}
                             </a>
                         </li>
@@ -108,11 +98,6 @@
                     <ul class="top-nav2">
                         <li>
                             <a href="#">
-                                {{ trans('messages.account') }}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
                                 {{ trans('messages.cart') }}
                             </a>
                         </li>
@@ -125,7 +110,7 @@
                     <div class="search-bar">
                     {{ Form::open(['url' => '/search', 'method' => 'get']) }}
                         {{ Form::text('key', null, [ 'placeholder' => trans('messages.search_book') ])}}
-                        {{ Form::submit('Search', ['class' => 'btn btn-primary']) }}
+                        {{ Form::submit('Search', ['class' => 'btn btn-success']) }}
                     {{ Form::close() }}
                     </div>
                 </section>
@@ -174,33 +159,26 @@
             <section class="row-fluid">
                 <figure class="span3">
                     <h4>
-                        {{ trans('messages.letter') }}
+                        Facebook
                     </h4>
-                    <p>abcxyz</p>
-                    <input name="" type="text" class="field-bg" value="{{ trans('messages.email')}}"/>
-                    <input name="" type="submit" value="{{ trans('messages.subscribe')}}" class="sub-btn" />
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FFramgia-Education-734064183465124%2F&tabs=timeline&width=500&height=250&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" class="facebook"></iframe>
                 </figure>
                 <figure class="span3">
-                    <h4>Twitter</h4>
-                    <ul class="tweets-list">
-                        <li>Twitter</a></li>
-                        <li>Twitter2</a></li>
-                    </ul>
                 </figure>
                 <figure class="span3">
                     <h4>
                         {{ trans('messages.location') }}
                     </h4>
-                    <p>abcxyz</p>
+                    <p>434 Trần Khát Chân, Phố Huế, Hai Bà Trưng, Hà Nội, Việt Nam</p>
                     <span>
                     <ul class="phon-list">
-                        <li>(971) 438-555-314</li>
-                        <li>(971) 367-252-333</li>
+                        <li>(0123) 456-7899</li>
+                        <li>(0988) 888-888</li>
                     </ul>
                     </span>
                     <span class="mail-list">
-                        <a href="#">info@companyname</a><br />
-                        <a href="#">jobs@companyname.com</a>
+                        <a href="#">books_shop@companyname</a><br />
+                        <a href="#">shop_books@companyname.com</a>
                     </span>
                 </figure>
                 <figure class="span3">
