@@ -25,8 +25,9 @@ Route::group(['prefix' => 'users', 'middleware' => 'checkUsers'], function() {
 });
 Route::get('/sale', 'SaleController@index');
 Route::get('/search', 'HomeController@getSearch');
-Route::get('/book-detail/{id?}', 'BooksController@getBooks');
+Route::get('/book-detail/{id?}', 'BooksController@getBooks')->middleware('checkUserRate');
 Route::get('/cart', 'CartController@cart');
 Route::get('/cart/{id?}', 'CartController@getCart');
 Route::get('/deleteCart/{id?}', 'CartController@remove');
 Route::post('/updateCart/{id?}', 'CartController@update')->name('updateCart');
+Route::post('/comment/{id_book?}/{id_user?}', 'RateCommentController@rateComment')->name('rateComment');

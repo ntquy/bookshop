@@ -115,4 +115,5 @@ return [
     'coupon' => 'Nhập mã giảm giá',
     'name_ship' => 'Tên người nhận',
     'proceed' => 'ĐẶT HÀNG',
+    'you_must' => 'Bạn phải đăng nhập để có thể đánh giá',
 ];

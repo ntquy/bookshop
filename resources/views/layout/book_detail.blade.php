@@ -101,60 +101,59 @@
 						<strong>{{ trans('messages.customer') }}</strong>
 					</div>
 					<ul class="review-list">
+					@foreach($comments as $com)
 						<li>
-							<span class="rating-bar"><img src="/images/rating-star.png" alt="Rating Star"/></span>
-							<em class="">AAAA</em>
-							<p>“ BBBBBBBB’</p>
+							<em class="">{{ $com->name }} - ({{ $com->star }} {{trans('messages.star')}}) </em>
+							<p>{{ $com->content }}</p>
 						</li>
+					@endforeach
 					</ul>
-					<a href="#" class="grey-btn">{{ trans('messages.write_review') }}</a>
 				</figure>
 				<figure class="right-sec">
 					<div class="r-title-bar">
 						<strong>{{ trans('messages.write_review') }}</strong>
 					</div>
+					@if(Auth::check())
+					{{ Form::open(['url' => route('rateComment', ['id_book' => $books->id, 'id_user' =>  Auth::user()->id])]) }}
+					@else
+					@endif
 					<ul class="review-f-list">
 						<li>
-							<label>{{ trans('messages.your_name') }} *</label>
-							<input name="" type="text" />
+							{{ Form::label( trans('messages.your_review') ) }}
+							{{ Form::textarea('comment', null) }}
 						</li>
 						<li>
-							<label>{{ trans('messages.summary_review') }} *</label>
-							<input name="" type="text" />
-						</li>
-						<li>
-							<label>{{ trans('messages.your_review') }} *</label>
-							<textarea name="" cols="2" rows="20"></textarea>
-						</li>
-						<li>
-							<label>{{ trans('messages.you_rate') }} *</label>
+							{{ Form::label( trans('messages.you_rate') ) }}
 							<div class="rating-list">
 								<div class="rating-box">
-									<label class="radio">
-										<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-									1 {{ trans('messages.star') }}
-									</label>
+								{{ Form::radio('optionsRadios', 1)}}
+								1 {{ trans('messages.star') }}
 								</div>
-								<label class="radio">
-									<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+								<br>
+									{{ Form::radio('optionsRadios', 2)}}
 									2 {{ trans('messages.star') }}
-								</label>
-								<label class="radio">
-									<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+								<br>
+									{{ Form::radio('optionsRadios', 3)}}
 									3 {{ trans('messages.star') }}
-								</label>
-								<label class="radio">
-									<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+								<br>
+									{{ Form::radio('optionsRadios', 4)}}
 									4 {{ trans('messages.star') }}
-								</label>
-								<label class="radio">
-									<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+								<br>
+									{{ Form::radio('optionsRadios', 5)}}
 									5 {{ trans('messages.star') }}
-								</label>
+								<br>
 							</div>
 						</li>
 					</ul>
-					<a href="#" class="grey-btn left-btn">{{ trans('messages.write_review') }}</a>
+					@if(Auth::check())
+					{{ Form::submit(trans('messages.write_review'), ['class' => 'grey-btn left-btn'])}}
+					{{ Form::close() }}
+					@else
+					{{ Form::submit(trans('messages.write_review'), ['class' => 'grey-btn left-btn', 'disabled' => 'true']) }}
+					<hr>
+					<p class="text">{{ trans('messages.you_must') }}</p>
+					{{ Form::close() }}
+					@endif
 				</figure>
 			</section>
 			<!-- End Customer Reviews Section -->
