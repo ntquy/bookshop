@@ -55,18 +55,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
                 </div>
                 <label class="anim">
-                {!! Form::checkbox('checkbox', null, ['class' => 'checkbox']) !!}
+                {!! Form::checkbox('remember', null, ['class' => 'checkbox', 'id' => 'remember']) !!}
                     <span>
                         {{ trans('messages.remember')}}
                     </span> 
-                    <a href="#">
-                        {{ trans('messages.forgot')}}
+                    <a href="{{ url('/register') }}">
+                        {{ trans('messages.register') }}
                     </a>
                 </label> 
                 <div class="clear">
                 </div>
                 <div class="submit-agileits">
-                    {!! Form::submit('Login') !!}
+                    {!! Form::submit( trans('messages.login') ) !!}
                 </div>
             {!! Form::close() !!}
 
