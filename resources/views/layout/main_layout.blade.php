@@ -8,6 +8,7 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1">
         <meta name="viewport" content="width=device-width">
         <!-- Css Files Start -->
+        <link rel="shortcut icon" type="image/png" href="{!! asset('/images/favicon.png') !!}">
         <link href="{!! asset('/bower_components/user/css/style.css') !!}" rel="stylesheet" type="text/css" /><!-- All css -->  
         <link href="{!! asset('/bower_components/user/css/bs.css') !!}" rel="stylesheet" type="text/css" /><!-- Bootstrap Css -->
         <link rel="stylesheet" type="text/css" href="{!! asset('/bower_components/user/css/main-slider.css') !!}" /><!-- Main Slider Css -->
