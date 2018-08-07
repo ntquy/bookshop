@@ -15,6 +15,13 @@ class BooksController extends Controller
 				->join('promotions', 'promotions.id', '=', 'books.promotion_id')
 				->where('books.id', '=', $id)
 				->get();
+        $comments = DB::table('books')
+                ->select('books.*', 'comments.content', 'users.name', 'rates.star')
+                ->join('comments', 'books.id', '=', 'comments.book_id')
+                ->join('users', 'users.id', '=', 'comments.user_id')
+                ->join('rates', 'books.id', '=', 'rates.book_id')
+                ->where('books.id', '=', $id)
+                ->get();
     	$books_cat = DB::select("SELECT b1.* , promotions.value 
     							FROM books AS b1 
     							INNER JOIN promotions ON promotions.id = b1.promotion_id 
@@ -29,6 +36,6 @@ class BooksController extends Controller
     							limit 0,10"
     							);
 
-    	return view('layout.book_detail', ['books' => $books[0], 'books_cat' => $books_cat ]);
+    	return view('layout.book_detail', ['books' => $books[0], 'books_cat' => $books_cat, 'comments' => $comments]);
     }
 }

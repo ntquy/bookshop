@@ -115,6 +115,7 @@ return [
     'coupon' => 'Enter your coupon code if you have one.',
     'name_ship' => 'Recipient`s name',
     'proceed' => 'PROCEED TO CHECKOUT',
+    'must_login' => 'You must Login',
 
 ];
 
