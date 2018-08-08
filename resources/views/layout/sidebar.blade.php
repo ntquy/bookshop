@@ -5,7 +5,7 @@
             <div class="side-inner-holder">
                 <strong class="title">{{ trans('messages.category') }}</strong>
                 <ul class="side-list">
-                    <@foreach ($limit_categories as $cat)
+                    @foreach ($limit_categories as $cat)
                         <li>
                             <a href="{{ url('/categories') . '/' . $cat->id }}">
                                 {{ $cat->name }}
