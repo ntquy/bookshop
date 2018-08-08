@@ -121,5 +121,7 @@ return [
     'contact_info' => 'Contact Info',
     'slogan' => 'Slogan',
     'make' => 'MAKE IT AWESOME',
+    'order_login' => 'You must login',
+    'success' => 'Success',
 ];
 

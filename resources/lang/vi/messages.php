@@ -121,4 +121,6 @@ return [
     'contact_info' => 'Thông tin liên hệ',
     'slogan' => 'Slogan',
     'make' => 'MAKE IT AWESOME',
+    'order_login' => 'Bạn cần đăng nhập để đặt hàng',
+    'success' => 'Đặt hàng thành công',
 ];

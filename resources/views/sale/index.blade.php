@@ -58,8 +58,8 @@
 
                 <ul class="product_view">
                     <li>{{ trans('messages.view_as') }}: </li>
-                    <li><a class="grid-view" href="{{ url('/cart') . '/' . $search->id }}">{{ trans('messages.grid_view') }}</a></li>
-                    <li><a class="list-view" href="list-view.html">{{ trans('messages.list_view') }}</a></li>
+                    <li><a class="grid-view" href="#">{{ trans('messages.grid_view') }}</a></li>
+                    <li><a class="list-view" href="#">{{ trans('messages.list_view') }}</a></li>
                 </ul>
             </div>
             <!-- End Grid View Section -->
