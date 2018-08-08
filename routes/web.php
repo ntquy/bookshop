@@ -18,7 +18,7 @@ Route::get('/dashboard', 'DashboardController@index')->middleware('check');
 Auth::routes();
 
 Route::get('/logout', 'HomeController@logout');
-Route::get('/categories/{id?}', 'CategoriesController@index');
+Route::get('/categories/{id?}', 'CategoriesController@show');
 Route::group(['prefix' => 'users', 'middleware' => 'checkUsers'], function() {
     Route::get('/edit/{id?}', 'UsersController@edit')->name('edit');
     Route::post('/edit/{id?}', 'UsersController@update')->name('update');

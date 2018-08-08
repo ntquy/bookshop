@@ -105,6 +105,8 @@ return [
     'your_review' => 'Đánh giá của bạn',
     'you_rate' => 'Bạn đánh giá cuốn sách này như thế nào?',
     'star' => 'Sao',
+    'available' => 'Còn hàng',
+    'sold_out' => 'Hết hàng',
     'product_name' => 'Tên sản phẩm',
     'unit' => 'Giá tiền',
     'subtotal' => 'Tổng',

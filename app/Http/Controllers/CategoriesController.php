@@ -14,21 +14,9 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
-        $category = DB::table('categories')
-                    ->select('categories.*')
-                    ->where('categories.id', '=', $id)
-                    ->get();
-        $categories = DB::table('books')
-                      ->select('books.*', 'promotions.value')
-                      ->join('promotions', 'promotions.id', '=', 'books.promotion_id')
-                      ->join('category_book', 'books.id', '=', 'category_book.book_id')
-                      ->join('categories', 'categories.id', '=', 'category_book.category_id')
-                      ->where('categories.id', '=', $id)
-                      ->paginate(9);
-
-        return view('categories.index', ['category' => $category[0], 'categories' => $categories ]);
+        //
     }
 
     /**
@@ -60,7 +48,19 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        //
+        $category = DB::table('categories')
+                    ->select('categories.*')
+                    ->where('categories.id', '=', $id)
+                    ->get();
+        $categories = DB::table('books')
+                      ->select('books.*', 'promotions.value')
+                      ->join('promotions', 'promotions.id', '=', 'books.promotion_id')
+                      ->join('category_book', 'books.id', '=', 'category_book.book_id')
+                      ->join('categories', 'categories.id', '=', 'category_book.category_id')
+                      ->where('categories.id', '=', $id)
+                      ->paginate(config('view.pagination'));
+
+        return view('categories.index', ['category' => $category[0], 'categories' => $categories ]);
     }
 
     /**
