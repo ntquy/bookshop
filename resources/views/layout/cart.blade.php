@@ -4,6 +4,9 @@
 @section('content')
 <section class="row-fluid">
 		<!-- Start Main Content -->
+		@if(session('notify'))
+		{{ session('notify') }}
+		@endif
 	<section class="span12 cart-holder">
 		<div class="heading-bar">
 			<h2>{{ trans('messages.cart') }}</h2>
@@ -35,46 +38,44 @@
 			</table>
 
 		</div>
-		
+		{{ Form::open(['url' => route('order', ['id_user' => Auth::user()->id])]) }}
 		<figure class="span4 first">
 			<div class="cart-option-box">
 				<h4><i class="icon-shopping-cart"></i> {{ trans('messages.shipping') }}</h4>
 				<p>{{ trans('messages.destination') }}</p>
-				<form class="form-horizontal">
-					<ul class="billing-form">
-						<li>   
-							<div class="control-group">
-								<label class="control-label" for="inputZip">{{ trans('messages.name_ship') }} <sup>*</sup></label>
-								<div class="controls">
-								  	<input name="name_ship" type="text" id="inputZip" placeholder="">
-								</div>
+				<ul class="billing-form">
+					<li>   
+						<div class="control-group">
+							{{ Form::label('inputZip', trans('messages.name_ship'), array('class' => 'control-label')) }}
+							<div class="controls">
+							  	{{ Form::text('name_ship', null) }}
 							</div>
-						</li>
-						<li>   
-							<div class="control-group">
-								<label class="control-label" for="inputZip">{{ trans('messages.address') }} <sup>*</sup></label>
-								<div class="controls">
-								  	<input name="address" type="text" id="inputZip" placeholder="">
-								</div>
+						</div>
+					</li>
+					<li>   
+						<div class="control-group">
+						{{ Form::label('inputZip', trans('messages.address'), array('class' => 'control-label')) }}
+							<div class="controls">
+							  	{{ Form::text('address', null) }}
 							</div>
-						</li>
-						<li>   
-							<div class="control-group">
-								<label class="control-label" for="inputZip">{{ trans('messages.phone') }} <sup>*</sup></label>
-								<div class="controls">
-								  	<input name="phone" type="text" id="inputZip" placeholder="">
-								</div>
+						</div>
+					</li>
+					<li>   
+						<div class="control-group">
+							{{ Form::label('inputZip', trans('messages.phone'), array('class' => 'control-label')) }}
+							<div class="controls">
+							  	{{ Form::text('phone', null) }}
 							</div>
-						</li>
-					</ul>
-				</form>
+						</div>
+					</li>
+				</ul>
 			</div>
 		</figure>
 		<figure class="span4">
 			<div class="cart-option-box">
 				<h4><i class="icon-money"></i> {{ trans('messages.discount_code') }}</h4>
 				<p>{{ trans('messages.coupon') }}</p>
-				<input type="text" id="inputDiscount" placeholder="">
+				{{ Form::text('coupon', null) }}
 				<br class="clearfix">
 			</div>
 		</figure>
@@ -87,9 +88,16 @@
 				  </tr>
 			  </table>
 			  <hr />
-				<a href="#" class="more-btn">{{ trans('messages.proceed') }}</a>
+			  @if(Auth::check())
+			  {{ Form::submit(trans('messages.proceed'), ['class' => 'more-btn'])}}
+			  @else
+			  {{ Form::submit(trans('messages.proceed'), ['class' => 'more-btn', 'disabled' => 'true'])}}
+			  <hr>
+			  <p class="text">{{ trans('messages.order_login') }}</p>
+			  @endif
 			</div>
 		</figure>
+		{{ Form::close() }}
 	</section>
 </section>
 @endsection
