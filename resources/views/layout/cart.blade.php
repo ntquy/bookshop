@@ -38,7 +38,9 @@
 			</table>
 
 		</div>
+		@if (Auth::check())
 		{{ Form::open(['url' => route('order', ['id_user' => Auth::user()->id])]) }}
+		@endif
 		<figure class="span4 first">
 			<div class="cart-option-box">
 				<h4><i class="icon-shopping-cart"></i> {{ trans('messages.shipping') }}</h4>
