@@ -9,7 +9,8 @@
         <meta name="viewport" content="width=device-width">
         <!-- Css Files Start -->
         <link rel="shortcut icon" type="image/png" href="{!! asset('/images/favicon.png') !!}">
-        <link href="{!! asset('/bower_components/user/css/style.css') !!}" rel="stylesheet" type="text/css" /><!-- All css -->  
+        <link href="{!! asset('/bower_components/user/css/style.css') !!}" rel="stylesheet" type="text/css" /><!-- All css -->
+
         <link href="{!! asset('/bower_components/user/css/bs.css') !!}" rel="stylesheet" type="text/css" /><!-- Bootstrap Css -->
         <link rel="stylesheet" type="text/css" href="{!! asset('/bower_components/user/css/main-slider.css') !!}" /><!-- Main Slider Css -->
         <!--[if lte IE 10]><link rel="stylesheet" type="text/css" href="css/customIE.css" /><![endif]-->
@@ -17,16 +18,32 @@
         <link href="{!! asset('/bower_components/user/css/font-awesome-ie7.css') !!}" rel="stylesheet" type="text/css" /><!-- Font Awesome iE7 Css -->
         <link rel="stylesheet" type="text/css" href="{!! asset('/css/bookshop.css') !!}">
         <link rel="stylesheet" type="text/css" href="{!! asset('/css/style.css') !!}">
+        <link rel="stylesheet" href="{!! asset('/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css') !!}" />
         <noscript>
             <link rel="stylesheet" type="text/css" href="{!! asset('/bower_components/user/css/noJS.css') !!}" />
         </noscript>
+        {{--<script type="text/javascript" src="{!! asset('/js/jquery-3.3.1.min.js') !!}"></script>--}}
+{{--        <script type="text/javascript" src="{!! asset('/js/bootstrap.min.js') !!}"></script>--}}
+        <script type="text/javascript" src="{!! asset('/bower_components/user/js/lib.js') !!}"></script><!-- lib Js -->
+        <script type="text/javascript" src="{!! asset('/bower_components/user/js/modernizr.js') !!}"></script><!-- Modernizr -->
+        <script type="text/javascript" src="{!! asset('/bower_components/user/js/easing.js') !!}"></script><!-- Easing js -->
+        <script type="text/javascript" src="{!! asset('/bower_components/user/js/bs.js') !!}"></script><!-- Bootstrap -->
+        <script type="text/javascript" src="{!! asset('/bower_components/user/js/bxslider.js') !!}"></script><!-- BX Slider -->
+        <script type="text/javascript" src="{!! asset('/bower_components/user/js/input-clear.js') !!}"></script><!-- Input Clear -->
+        <script src="{!! asset('/bower_components/user/js/range-slider.js') !!}"></script><!-- Range Slider -->
+        <script src="{!! asset('/bower_components/user/js/jquery.zoom.js') !!}"></script><!-- Zoom Effect -->
+        <script type="text/javascript" src="{!! asset('/bower_components/user/js/bookblock.js') !!}"></script><!-- Flip Slider -->
+        <script type="text/javascript" src="{!! asset('/bower_components/user/js/custom.js') !!}"></script><!-- Custom js -->
+        <script type="text/javascript" src="{!! asset('/bower_components/user/js/social.js') !!}"></script>
+        <script type="text/javascript" src="{!! asset('/bower_components/moment/min/moment.min.js') !!}"></script>
+        <script type="text/javascript" src="{!! asset('/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') !!}"></script>
         <!-- Css Files End -->
     </head>
 <body>
 <!-- Start Main Wrapper -->
 <div class="wrapper">
   <!-- Start Main Header -->
-  <!-- Start Top Nav Bar 
+  <!-- Start Top Nav Bar
 -->
     <section class="top-nav-bar">
         <section class="container-fluid container">
@@ -47,14 +64,14 @@
                 </section>
                 <section class="span6 e-commerce-list">
                     <ul>
-                        <li>
+                        <li class="dropdown">
                             @if( Auth::user() )
-                                {{ trans('messages.welcome') }}        
-                                <div class="btn-group">
-                                    <button data-toggle="dropdown" class="btn btn-mini dropdown-toggle">{{ Auth::user()->name }}<span class="caret"></span></button>
+                                {{ trans('messages.welcome') }}
+                                <div class="btn-group dropdown">
+                                    <button data-toggle="dropdown" class="btn btn-mini data-toggle" type="button">{{ Auth::user()->name }}<span class="caret"></span></button>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a href="{{ url( '/users/edit').'/'. Auth::user()->id }}">
+                                            <a href="{{ url( '/user/edit').'/'. Auth::user()->id }}">
                                                 {{ trans('messages.edit') }}
                                             </a>
                                         </li>
@@ -98,7 +115,7 @@
                 <section class="span8">
                     <ul class="top-nav2">
                         <li>
-                            <a href="#">
+                            <a href="{{ url( '/cart' ) }}">
                                 {{ trans('messages.cart') }}
                             </a>
                         </li>
@@ -109,9 +126,9 @@
                         </li>
                     </ul>
                     <div class="search-bar">
-                    {{ Form::open([ 'url' => '/search', 'method' => 'get' ]) }}
-                        {{ Form::text('key', null, [ 'placeholder' => trans('messages.search_book') ]) }}
-                        {{ Form::submit('Search', [ 'class' => 'btn btn-primary' ]) }}
+                    {{ Form::open(['url' => '/search', 'method' => 'get']) }}
+                        {{ Form::text('key', null, [ 'placeholder' => trans('messages.search_book') ])}}
+                        {{ Form::submit('Search', ['class' => 'btn btn-success']) }}
                     {{ Form::close() }}
                     </div>
                 </section>
@@ -130,8 +147,8 @@
                         <ul class="nav">
                         @foreach ($categories as $cat)
                             <li>
-                                <a href="{{ url('/categories') . '/' . $cat->id }}">
-                                    {{ $cat->name }}
+                                <a href="{{ url( '/category') .'/'.$cat->id }}">
+                                    {{ $cat->name}}
                                 </a>
                             </li>
                         @endforeach
@@ -323,19 +340,7 @@
 </div>
 <!-- End Main Wrapper -->
     <!-- JS Files Start -->
-    <script type="text/javascript" src="{!! asset('/bower_components/user/js/lib.js') !!}"></script><!-- lib Js -->
-    <script type="text/javascript" src="{!! asset('/bower_components/user/js/modernizr.js') !!}"></script><!-- Modernizr -->
-    <script type="text/javascript" src="{!! asset('/bower_components/user/js/easing.js') !!}"></script><!-- Easing js -->
-    <script type="text/javascript" src="{!! asset('/bower_components/user/js/bs.js') !!}"></script><!-- Bootstrap -->
-    <script type="text/javascript" src="{!! asset('/bower_components/user/js/bxslider.js') !!}"></script><!-- BX Slider -->
-    <script type="text/javascript" src="{!! asset('/bower_components/user/js/input-clear.js') !!}"></script><!-- Input Clear -->
-    <script src="{!! asset('/bower_components/user/js/range-slider.js') !!}"></script><!-- Range Slider -->
-    <script src="{!! asset('/bower_components/user/js/jquery.zoom.js') !!}"></script><!-- Zoom Effect -->
-    <script type="text/javascript" src="{!! asset('/bower_components/user/js/bookblock.js') !!}"></script><!-- Flip Slider -->
-    <script type="text/javascript" src="{!! asset('/bower_components/user/js/custom.js') !!}"></script><!-- Custom js -->
-    <script type="text/javascript" src="{!! asset('/bower_components/user/js/social.js') !!}"></script><!-- Social Icons -->
-    <script type="text/javascript" src="{!! asset('/js/bootstrap.min.js') !!}"></script>
-    <script type="text/javascript" src="{!! asset('/js/jquery-3.3.1.min.js') !!}"></script>
+    <!-- Social Icons -->
     <!-- JS Files End -->
     <script type="text/javascript">
       /* <![CDATA[ */

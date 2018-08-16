@@ -25,7 +25,7 @@
             <section class="grid-holder features-books">
                 @foreach($books_sale as $sale)
                 <figure class="span4 slide first ">
-                    <a href="{{ url('/book-detail') . '/' . $sale->id }}"><img class="image4" src="{{ $sale->image }}" alt="" class="pro-img"/></a>
+                    <a href="{{ url('/book-detail') . '/' . $sale->id }}"><img class="image4" src="{{ asset('/storage/'.$sale->image) }}" alt="" class="pro-img"/></a>
                     <span class="title"><a href="{{ url('/book-detail') . '/' . $sale->id }}">{{ $sale->name }}</a></span>
                     <span class="title">{{ $sale->author }}</span>
                     <span class="rating-bar"><img src="{{ asset('images/rating-star.png') }}" alt="Rating Star"/></span>

@@ -24,7 +24,7 @@
 				</tr>
 			  	@foreach($content as $item)
 			  	<tr bgcolor="#FFFFFF" class=" product-detail">
-					<td valign="top"><img class="image6" src="{{ $item->options['img'] }}" /></td>
+					<td valign="top"><img class="image6" src="{!! asset('/storage/' . $item->options['img']) !!}" /></td>
 					<td valign="top"><strong>{{ $item->name }}</strong></td>
 					<td align="center" valign="top">{{ number_format($item->price) }} vnd </td>
 					{{ Form::open(['url' => route('updateCart', ['id' => $item->rowId]), 'method' => 'post']) }}
