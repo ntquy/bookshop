@@ -17,3 +17,20 @@
     #side-menu li:first-child{
         padding: 10px 0 0;
     }
+    .error, .error_msg{
+        font-size : 18px;
+        color : #793e3e;
+    }
+    .paid_check{
+        color : #1D801B;
+    }
+    .paid_uncheck{
+        color : #7d1717;
+    }
+    .fullscreen{
+        width : 90%;
+        margin : auto;
+    }
+    .order_modal{
+        width : 100%;
+    }
