@@ -19,8 +19,9 @@ class checkLogin
         if(Auth::check())
         {
             $user = Auth::user();
-            if ($user->role == -1)
+            if ($user->role == 1 || $user->role == 2)
             {
+                $request->session()->put('user', $user);
                 return $next($request);
             }
             else

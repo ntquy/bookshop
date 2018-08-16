@@ -11,7 +11,7 @@
                         <div class="bb-custom-content">
                             <div class="slide-inner">
                                 <div class="span4 book-holder">
-                                    <a href="{{ url('/book-detail').'/'.$rate->id }}"><img class="image1" src="{!! asset('/storage/' . $rate->image) !!}" alt="Book" /></a>
+                                    <a href="{{ url('/book-detail').'/'.$rate->id }}"><img class="image1" src="{!! asset('storage/' . $rate->image) !!}" alt="Book" /></a>
                                     <div class="cart-price">
                                         <a class="cart-btn2" href="{{ url('/cart').'/'.$rate->id }}">{{ trans('messages.add_cart') }}</a>
                                         <span class="price">{{ number_format($rate->price) }} vnd</span>
@@ -51,7 +51,7 @@
     @foreach($books_sale as $sale)
         <figure class="span4 s-product">
             <div class="s-product-img">
-                <a href="{{ url('/book-detail').'/'.$sale->id }}"><img class="image2" src="{!! asset('/storage/' . $sale->image) !!}" alt="Image02"/></a>
+                <a href="{{ url('/book-detail').'/'.$sale->id }}"><img class="image2" src="{!! asset('storage/' . $sale->image) !!}" alt="Image02"/></a>
             </div>
             <article class="s-product-det">
                 <h3><a href="{{ url('/book-detail').'/'.$sale->id }}">{{ $sale->name }}</a></h3>

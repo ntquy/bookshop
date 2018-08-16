@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
-use App\Book;
-use DB;
 
-class CategoriesController extends Controller
+class PublisherController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -48,19 +45,7 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        $category = DB::table('categories')
-                    ->select('categories.*')
-                    ->where('categories.id', '=', $id)
-                    ->get();
-        $categories = DB::table('books')
-                      ->select('books.*', 'promotions.value')
-                      ->join('promotions', 'promotions.id', '=', 'books.promotion_id')
-                      ->join('category_book', 'books.id', '=', 'category_book.book_id')
-                      ->join('categories', 'categories.id', '=', 'category_book.category_id')
-                      ->where('categories.id', '=', $id)
-                      ->paginate(config('view.pagination'));
-
-        return view('categories.index', ['category' => $category[0], 'categories' => $categories ]);
+        //
     }
 
     /**
