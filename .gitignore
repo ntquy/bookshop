@@ -14,3 +14,6 @@ yarn-error.log
 composer.json
 /public/bower_components
 composer.lock
+/public/images
+/public/js/bootstrap.min.js
+/public/js/jquery-3.3.1.min.js
