@@ -20,7 +20,7 @@ class Book extends Model
 
     public function orders()
     {
-    	return $this->belongsToMany('App\Order')->withTimestamps();
+    	return $this->hasMany('App\OrderDetail', 'book_id');
     }
 
     public function promotion()

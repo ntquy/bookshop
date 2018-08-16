@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Category;
 use App\Book;
-use DB;
+use App\Order;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class CategoriesController extends Controller
+class StatisticController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,9 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::all();
+
+        return view('admin.order.show', compact('orders'));
     }
 
     /**
@@ -48,19 +50,7 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        $category = DB::table('categories')
-                    ->select('categories.*')
-                    ->where('categories.id', '=', $id)
-                    ->get();
-        $categories = DB::table('books')
-                      ->select('books.*', 'promotions.value')
-                      ->join('promotions', 'promotions.id', '=', 'books.promotion_id')
-                      ->join('category_book', 'books.id', '=', 'category_book.book_id')
-                      ->join('categories', 'categories.id', '=', 'category_book.category_id')
-                      ->where('categories.id', '=', $id)
-                      ->paginate(config('view.pagination'));
-
-        return view('categories.index', ['category' => $category[0], 'categories' => $categories ]);
+        //
     }
 
     /**
@@ -83,7 +73,13 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Order::where('id', $id)->update([
+            'paid' => 1
+        ]);
+
+        echo json_encode([
+            'error' => 0
+        ]);
     }
 
     /**
@@ -96,4 +92,29 @@ class CategoriesController extends Controller
     {
         //
     }
+
+    protected function getOrderDetail()
+    {
+
+        $book_detail = DB::table('order_details')->get();
+
+        echo '<pre>';
+
+        $result = array();
+
+        foreach ($book_detail as $detail)
+        {
+            $book = Book::where('id', $detail->book_id)->first();
+
+            array_push($result, [
+                'book_id' => $detail->book_id,
+                'price' => ($book['price'] * $detail->quantity),
+                'order_id' => $detail->order_id,
+            ]);
+        }
+
+        print_r($result);
+
+    }
+
 }
