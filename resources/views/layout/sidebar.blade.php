@@ -7,7 +7,7 @@
                 <ul class="side-list">
                     @foreach ($limit_categories as $cat)
                         <li>
-                            <a href="{{ url('/categories') . '/' . $cat->id }}">
+                            <a href="{{ url('/category') . '/' . $cat->id }}">
                                 {{ $cat->name }}
                             </a>
                         </li>

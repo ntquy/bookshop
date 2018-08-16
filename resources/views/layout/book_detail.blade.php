@@ -24,7 +24,7 @@
             <div class="book-i-caption">
                 <!-- Strat Book Image Section -->
                 <div class="span6 b-img-holder">
-                    <span class='zoom' id='ex1'> <img class="image5" src='{{ $books->image }}' id='jack' alt='Book'/></span>
+                    <span class='zoom' id='ex1'> <img class="image5" src='{!! asset('/storage/' . $books->image) !!}' id='jack' alt='Book'/></span>
                 </div>
                 <!-- Strat Book Image Section -->
 
@@ -71,7 +71,7 @@
                 <div class="slider6">
                     @foreach($books_cat as $catbook)
                     <div class="slide">
-                        <a href="{{ url('/book-detail') . '/' . $catbook->id }}"><img class="image6" src="{{ $catbook->image }}" alt="" class="pro-img"/></a>
+                        <a href="{{ url('/book-detail') . '/' . $catbook->id }}"><img class="image6" src="{!! asset('/storage/' . $catbook->image) !!}" alt="" class="pro-img"/></a>
                         <span class="title"><strong><a href="{{ url('/book-detail') . '/' . $catbook->id }}">{{ $catbook->name }}</a></strong></span>
                         <span class="title">{{ $catbook->author }}</span>
                         <span class="rating-bar"><img src="{{ asset('images/rating-star.png') }}" alt="Rating Star"/></span>

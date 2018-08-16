@@ -23,9 +23,9 @@
                 </div>
             </div>
             <section class="grid-holder features-books">
-                @foreach($result as $search)
+                @foreach($result as $key => $search)
                 <figure class="span4 slide first">
-                    <a href="{{ url('/book-detail') . '/' . $search->id }}"><img class="image4" src="{{ $search->image }}" alt="" class="pro-img"/></a>
+                    <a href="{{ url('/book-detail') . '/' . $search->id }}"><img class="image4" src="{{ asset('/storage/'.$search->image) }}" alt="" class="pro-img"/></a>
                     <span class="title"><a href="{{ url('/book-detail') . '/' . $search->id }}">{{ $search->name }}</a></span>
                     <span class="title">{{ $search->author }}</span>
                     <span class="rating-bar"><img src="{{ asset('images/rating-star.png') }}" alt="Rating Star"/></span>
@@ -40,6 +40,9 @@
                         <span class="price">{{ number_format($search->price) }} vnd</span>
                         @endif
                 </figure>
+                @if(($key + 1) % 3 ==0)
+                <hr>
+                @endif
                 @endforeach
             </section>
             <hr>
@@ -66,10 +69,10 @@
                 <ul class="product_view">
                     <li>{{ trans('messages.view_as') }}: </li>
                     <li>
-                        <a class="grid-view" href="{{ url('/cart') . '/' . $search->id }}">{{ trans('messages.grid_view') }}</a>
+                        <a class="grid-view" href="#">{{ trans('messages.grid_view') }}</a>
                     </li>
                     <li>
-                        <a class="list-view" href="list-view.html">{{ trans('messages.list_view') }}</a>
+                        <a class="list-view" href="#">{{ trans('messages.list_view') }}</a>
                     </li>
                 </ul>
             </div>
