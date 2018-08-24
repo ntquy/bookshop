@@ -44,4 +44,6 @@ Route::resource('categories', 'CategoryController');
 Route::resource('books', 'BookController');
 Route::resource('publishers', 'PublisherController');
 Route::resource('statistics' , 'StatisticController');
+Route::get('/checkout/{id_user?}', 'OrderController@checkout')->middleware('checkUserCheckout');
+Route::get('/details/{order_detail_id?}', 'OrderController@details');
 

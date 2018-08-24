@@ -62,5 +62,7 @@ class Kernel extends HttpKernel
         'check' => \App\Http\Middleware\checkLogin::class,
         'checkUsers' => \App\Http\Middleware\checkUsers::class,
         'checkUserRate' => \App\Http\Middleware\checkUserRate::class,
+        'checkUserCheckout' => \App\Http\Middleware\checkUserCheckout::class,
+
     ];
 }

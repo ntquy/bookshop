@@ -123,5 +123,11 @@ return [
     'make' => 'MAKE IT AWESOME',
     'order_login' => 'You must login',
     'success' => 'Success',
+    'name_ship' => 'Name',
+    'address_ship' => 'Address',
+    'total_price' => 'Total prices',
+    'action' => 'Action',
+    'close' => 'Close',
+    'no_orders' => 'No Orders',
 ];
 
