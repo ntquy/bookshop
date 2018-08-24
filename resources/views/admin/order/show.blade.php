@@ -40,7 +40,7 @@
                 @foreach($orders as $stt => $order)
                     <tr>
                         <td class="text-center">
-                            {{ $order->user->name }}
+                            {{ $order->name_ship }}
                         </td>
                         <td class="text-center">
                             {{ $order->total_price }}

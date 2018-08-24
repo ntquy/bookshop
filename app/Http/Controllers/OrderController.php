@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\OrderRequest;
 use Cart;
 use App\User;
+use App\Order;
 use DB;
 
 class OrderController extends Controller
@@ -13,15 +14,19 @@ class OrderController extends Controller
     public function order(OrderRequest $request, $id_user)
     {
     	$content = Cart::content();
+        $total1 = Cart::total();
+        $real_integer = filter_var($total1, FILTER_SANITIZE_NUMBER_INT);
+        $total = $real_integer/100;
        	DB::table('orders')->insert(
     		[
-    			'total_price' => Cart::total(),
+    			'total_price' => $total,
     			'discount' => 0,
     			'paid' => 0,
     			'ship_address' => $request->address,
     			'phone' => $request->phone,
     			'user_id' => $id_user,
     			'coupon_id' => 0,
+                'name_ship' => $request->name_ship,
     			'created_at' => date('Y-m-d H:m:i')
     		]
     		);
@@ -32,12 +37,29 @@ class OrderController extends Controller
     			[
     				'quantity' => $con->qty,
     				'order_id' =>$id_order,
-    				'book_id' => $con->id
+    				'book_id' => $con->id,
+                    'prices' => $con->price
     			]
     			);
     	}
     	Cart::destroy();
 
     	return redirect('/cart')->with('notify', trans('messages.success'));
+    }
+    public function checkout($id_user)
+    {
+        $orders = Order::where('user_id', $id_user)->get();
+
+        return view('layout.checkout', [ 'orders' => $orders ] );
+    }
+    public function details($order_detail_id)
+    {
+        $checkout = DB::table('order_details')
+                    ->select('order_details.*', 'books.name')
+                    ->join('books', 'books.id', '=', 'order_details.book_id')
+                    ->where('order_id', $order_detail_id)
+                    ->get();
+
+        return $checkout;
     }
 }

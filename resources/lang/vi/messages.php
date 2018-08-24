@@ -123,4 +123,10 @@ return [
     'make' => 'MAKE IT AWESOME',
     'order_login' => 'Bạn cần đăng nhập để đặt hàng',
     'success' => 'Đặt hàng thành công',
+    'name_ship' => 'Tên người nhận',
+    'address_ship' => 'Địa chỉ nhận hàng',
+    'total_price' => 'Tổng tiền',
+    'action' => 'Action',
+    'close' => 'Đóng',
+    'no_orders' => 'Không có đơn hàng nào ',
 ];

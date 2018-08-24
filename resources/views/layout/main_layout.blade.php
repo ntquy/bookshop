@@ -120,7 +120,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{ url( '/checkout' ).'/'. Auth::id() }}">
                                 {{ trans('messages.order') }}
                             </a>
                         </li>
