@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'quy36q@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'quy36q'),
     ],
 
     /*
@@ -83,9 +83,7 @@ return [
     | connection. You may also set the "password" value below this one.
     |
     */
-
     'username' => env('MAIL_USERNAME'),
-
     'password' => env('MAIL_PASSWORD'),
 
     /*
@@ -100,6 +98,7 @@ return [
     */
 
     'sendmail' => '/usr/sbin/sendmail -bs',
+    'pretend' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -117,6 +116,14 @@ return [
 
         'paths' => [
             resource_path('views/vendor/mail'),
+        ],
+    ],
+
+    'stream' => [
+        'ssl' => [
+            'allow_self_signed' => true,
+            'verify_peer' => false,
+            'verify_peer_name' => false,
         ],
     ],
 
