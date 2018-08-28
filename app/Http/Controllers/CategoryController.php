@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Category;
 
 class CategoryController extends Controller
 {
@@ -13,7 +14,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+
+        return view('admin.category.show', compact('categories') );
     }
 
     /**
@@ -23,7 +26,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+
+        return view( 'admin.category.add' );
     }
 
     /**
@@ -34,7 +38,15 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $category = new Category();
+        $category->name = $data['name'];
+        $category->save();
+
+        echo json_encode([
+            'error' => 0,
+        ]);
     }
 
     /**
@@ -56,7 +68,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cat = Category::where('id' , $id)->first();
+
+        return view('admin.category.edit', ['cat' => $cat ] );
     }
 
     /**
@@ -68,7 +82,14 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        unset($data['_token']);
+
+        unset($data['_method']);
+
+        Category::where('id', $id)->update($data);
+
+        return redirect()->route( 'categories.index' );
     }
 
     /**
@@ -79,6 +100,10 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::where('id' , $id)->delete();
+
+        echo json_encode([
+            'error' => 0,
+        ]);
     }
 }

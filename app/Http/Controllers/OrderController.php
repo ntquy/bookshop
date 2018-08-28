@@ -58,7 +58,7 @@ class OrderController extends Controller
     }
     public function checkout($id_user)
     {
-        $orders = Order::where('user_id', $id_user)->get();
+        $orders = Order::where('user_id', $id_user)->where('paid', 0)->get();
 
         return view('layout.checkout', [ 'orders' => $orders ] );
     }

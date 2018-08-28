@@ -77,7 +77,7 @@
                 <ul class="nav navbar-top-links navbar-left m-l-20 hidden-xs">
                     <li>
                         {!! Form::open([ 'url' => '#', 'role' => 'search', 'class' => 'app-search hidden-xs' ]) !!}
-                        {!! Form::text( 'test', null, [ 'placeholder' => '...', 'class' => 'form-control' ]) !!}
+                        {!! Form::text( 'test', null, ['class' => 'form-control' ]) !!}
                             <a href="#"><i class="fa fa-search"></i></a>
                         {!! Form::close() !!}
                     </li>
@@ -115,6 +115,9 @@
                         <a href="{{ route('users.index') }}" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i><span class="hide-menu">{{ trans('common.user')}}</span></a>
                     </li>
                     <li>
+                        <a href="{{ route('categories.index') }}" class="waves-effect"><i class="fa fa-bars fa-fw" aria-hidden="true"></i><span class="hide-menu">{{ trans('messages.manager_category')}}</span></a>
+                    </li>
+                    <li>
                         <a href="{{ route('books.index') }}" class="waves-effect"><i class="fa fa-book fa-fw" aria-hidden="true"></i><span class="hide-menu">{{ trans('common.book')}}</span></a>
                     </li>
                     <li>
@@ -122,7 +125,7 @@
                     </li>
                     @if($user_session->role == 2)
                     <li>
-                        <a href="#" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i><span class="hide-menu">{{ trans('common.statistic')}}</span></a>
+                        <a href="#" class="waves-effect"><i class="glyphicon glyphicon-signal fa-fw" aria-hidden="true"></i><span class="hide-menu">{{ trans('common.statistic')}}</span></a>
                     </li>
                     @endif
                 </ul>
