@@ -8,6 +8,8 @@ use Cart;
 use App\User;
 use App\Order;
 use DB;
+use Mail;
+use Auth;
 
 class OrderController extends Controller
 {
@@ -42,9 +44,17 @@ class OrderController extends Controller
     			]
     			);
     	}
+        $data = $content;
+        Mail::send('email.email', ['data' => $data ], function($messages) {
+            $messages->to(Auth::user()->email, 'Artisans Web')
+            ->subject('Confirm Order BookShop');
+            $messages->from('quy36q@gmail.com', 'Quys');
+        });
+        
     	Cart::destroy();
 
     	return redirect('/cart')->with('notify', trans('messages.success'));
+
     }
     public function checkout($id_user)
     {

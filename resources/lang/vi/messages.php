@@ -122,7 +122,7 @@ return [
     'slogan' => 'Slogan',
     'make' => 'MAKE IT AWESOME',
     'order_login' => 'Bạn cần đăng nhập để đặt hàng',
-    'success' => 'Đặt hàng thành công',
+    'success' => 'Đặt hàng thành công!!! Bạn có thể xem đơn hàng của bạn trong Mail đăng ký',
     'name_ship' => 'Tên người nhận',
     'address_ship' => 'Địa chỉ nhận hàng',
     'total_price' => 'Tổng tiền',
