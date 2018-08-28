@@ -133,7 +133,7 @@
                                                                     {{ $order_detail->quantity }}
                                                                 </td>
                                                                 <td>
-                                                                    {{ $order_detail->book['price'] * $order_detail->quantity }}
+                                                                    {{ $order_detail->prices * $order_detail->quantity }}
                                                                 </td>
                                                             </tr>
                                                         @endforeach

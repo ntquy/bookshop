@@ -129,4 +129,8 @@ return [
     'action' => 'Action',
     'close' => 'Đóng',
     'no_orders' => 'Không có đơn hàng nào ',
+    'manager_category' => 'Quản lý thể loại',
+    'show_category' => 'Danh sách thể loại',
+    'add_category' => 'Thêm thể loại',
+    'edit_category' => 'Chỉnh sửa thể loại',
 ];

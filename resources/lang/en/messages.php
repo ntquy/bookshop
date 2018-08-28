@@ -129,5 +129,9 @@ return [
     'action' => 'Action',
     'close' => 'Close',
     'no_orders' => 'No Orders',
+    'manager_category' => 'Manager Categories',
+    'show_category' => 'List Categories',
+    'add_category' => 'Add Category',
+    'edit_category' => 'Edit Category',
 ];
 

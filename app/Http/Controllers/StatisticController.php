@@ -90,7 +90,11 @@ class StatisticController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Order::where('id' , $id)->delete();
+
+        echo json_encode([
+            'error' => 0,
+        ]);
     }
 
     protected function getOrderDetail()
@@ -108,7 +112,7 @@ class StatisticController extends Controller
 
             array_push($result, [
                 'book_id' => $detail->book_id,
-                'price' => ($book['price'] * $detail->quantity),
+                'price' => ($detail->prices * $detail->quantity),
                 'order_id' => $detail->order_id,
             ]);
         }
