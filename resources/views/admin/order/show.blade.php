@@ -43,7 +43,7 @@
                             {{ $order->name_ship }}
                         </td>
                         <td class="text-center">
-                            {{ $order->total_price }}
+                            {{ number_format($order->total_price) }}
                         </td>
                         <td class="text-center">
                             {{ $order->ship_address }}

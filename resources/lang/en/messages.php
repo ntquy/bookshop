@@ -133,5 +133,12 @@ return [
     'show_category' => 'List Categories',
     'add_category' => 'Add Category',
     'edit_category' => 'Edit Category',
+    'manager_price' => 'Manager Prices Range',
+    'show_prices' => 'List Prices Range',
+    'add_prices' => 'Add Prices Range',
+    'range' => 'Prices Range',
+    'min' => 'Min',
+    'max' => 'Max',
+    'edit_range' =. 'Edit Price Range',
 ];
 

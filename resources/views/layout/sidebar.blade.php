@@ -15,26 +15,12 @@
                 </ul>
                 <strong class="title">{{ trans('messages.price') }}</strong>
                 <ul class="side-list">
-                    <li><a href="#">$0.00 - $10,00.00 (13)</a></li>
-                    <li><a href="#">$10,00.00 - $20,00.00 (2)</a></li>
+                    @foreach($range as $range)
+                    <li>
+                        <a href="{{ route('searchPrices', ['min' => $range->min, 'max' => $range->max])}}">{{ number_format($range->min) }} vnd - {{ number_format($range->max) }} vnd</a>
+                    </li>
+                    @endforeach
                 </ul>
-                <strong class="title">{{ trans('messages.author') }}</strong>
-                <ul class="side-list">
-                    <li><a href="book-detail.html">A (9)</a></li>
-                    <li><a href="book-detail.html">B (2)</a></li>
-                    <li><a href="book-detail.html">C (1)</a></li>
-                    <li><a href="book-detail.html">D (3)</a></li>
-                </ul>
-            </div>
-        </article>
-    </div>
-    <div class="side-holder">
-        <article class="price-range">
-            <h2>{{ trans('messages.price_range') }}</h2>
-            <div class="side-inner-holder">
-                <p>{{ trans('messages.select_price') }}</p>
-                <div id="slider-range"></div>
-                <p> <input type="text" id="amount" class="r-input"> </p>
             </div>
         </article>
     </div>
