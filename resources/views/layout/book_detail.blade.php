@@ -17,7 +17,7 @@
                 </div>
                 <div class="span6 book-d-nav">
                     <ul>
-                        <li><a href="#">2 {{ trans('messages.review') }}</a></li>
+                        <li><a href="#">{{ count($comments) }} {{ trans('messages.review') }}</a></li>
                     </ul>
                 </div>
             </article>

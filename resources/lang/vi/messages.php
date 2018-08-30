@@ -133,4 +133,11 @@ return [
     'show_category' => 'Danh sách thể loại',
     'add_category' => 'Thêm thể loại',
     'edit_category' => 'Chỉnh sửa thể loại',
+    'manager_price' => 'Quản lý khoảng giá',
+    'show_prices' => 'Danh sách khoảng giá',
+    'add_prices' => 'Thêm khoảng giá',
+    'range' => 'Khoảng giá',
+    'min' => 'Giá dưới',
+    'max' => 'Giá trên',
+    'edit_range' => 'Chỉnh sửa khoảng giá',
 ];

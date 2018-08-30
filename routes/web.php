@@ -23,10 +23,16 @@ Route::group(['prefix' => 'users', 'middleware' => 'checkUsers'], function() {
     Route::get('/edit/{id?}', 'UsersController@edit')->name('edit');
     Route::post('/edit/{id?}', 'UsersController@update')->name('update');
 });
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => 'check'], function() {
     Route::get('/edit/{id?}', 'UserController@editProfile')->name('admin.profile.edit');
     Route::post('/edit/{id?}', 'UserController@updateProfile')->name('admin.profile.update');
     Route::post('/password/{id?}', 'UserController@passwordChange')->name('password.change');
+    Route::resource('/users', 'UserController');
+	Route::resource('/categories', 'CategoryController');
+	Route::resource('/books', 'BookController');
+	Route::resource('/publishers', 'PublisherController');
+	Route::resource('/statistics' , 'StatisticController');
+	Route::resource('/prices' , 'PriceRange');
 });
 Route::get('/sale', 'SaleController@index');
 Route::get('/search', 'HomeController@getSearch');
@@ -39,11 +45,6 @@ Route::post('/comment/{id_book?}/{id_user?}', 'RateCommentController@rateComment
 Route::get('/contact', 'HomeController@contact');
 Route::post('/order/{id_user?}', 'OrderController@order')->name('order');
 
-Route::resource('users', 'UserController');
-Route::resource('categories', 'CategoryController');
-Route::resource('books', 'BookController');
-Route::resource('publishers', 'PublisherController');
-Route::resource('statistics' , 'StatisticController');
 Route::get('/checkout/{id_user?}', 'OrderController@checkout')->middleware('checkUserCheckout');
 Route::get('/details/{order_detail_id?}', 'OrderController@details');
-
+Route::get('/searchPrices/{min?}/{max?}', 'HomeController@getBooks')->name('searchPrices');

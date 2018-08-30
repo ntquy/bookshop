@@ -52,12 +52,24 @@ class HomeController extends Controller
                 ->join('promotions', 'promotions.id', '=', 'books.promotion_id')
                 ->where('name', 'like', '%'.$request->key.'%')
                 ->orWhere('author', 'like', '%'.$request->key.'%')
-                ->paginate(config('view.pagination'));
+                ->orWhere('content', 'like', '%'.$request->key.'%')
+                ->paginate( config('view.pagination') );
 
-        return view('layout.search', compact('result'));
+        return view('layout.search', compact('result') );
     }
     public function contact()
     {
         return view('layout.contact');
     }
+    public function getBooks($min, $max)
+    {
+        $result = DB::table('books')
+                ->select('books.*', 'promotions.value')
+                ->join('promotions', 'promotions.id', '=', 'books.promotion_id')
+                ->whereBetween('price', [$min, $max] )
+                ->paginate( config('view.pagination') );
+
+        return view('layout.getbooks', compact('result') );
+    }
+
 }

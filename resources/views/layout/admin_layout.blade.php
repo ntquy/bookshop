@@ -82,6 +82,7 @@
                         {!! Form::close() !!}
                     </li>
                 </ul>
+                
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li class="dropdown">
                         <a class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
@@ -117,9 +118,14 @@
                     <li>
                         <a href="{{ route('categories.index') }}" class="waves-effect"><i class="fa fa-bars fa-fw" aria-hidden="true"></i><span class="hide-menu">{{ trans('messages.manager_category')}}</span></a>
                     </li>
+                     <li>
+                        <a href="{{ route('prices.index') }}" class="waves-effect"><i class="fa fa-money fa-fw" aria-hidden="true"></i><span class="hide-menu">{{ trans('messages.manager_price')}}</span></a>
+                    </li>
+                    @if($user_session->role == 2)
                     <li>
                         <a href="{{ route('books.index') }}" class="waves-effect"><i class="fa fa-book fa-fw" aria-hidden="true"></i><span class="hide-menu">{{ trans('common.book')}}</span></a>
                     </li>
+                    @endif
                     <li>
                         <a href="{{ route('statistics.index') }}" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i><span class="hide-menu">{{ trans('common.order_list')}}</span></a>
                     </li>
