@@ -139,6 +139,9 @@ return [
     'range' => 'Prices Range',
     'min' => 'Min',
     'max' => 'Max',
-    'edit_range' =. 'Edit Price Range',
+    'edit_range' => 'Edit Price Range',
+    'chart_books' => 'Charts Order',
+    'total_books' => 'Total Order',
+    'cat_books' => 'Charts Books By Category',
 ];
 

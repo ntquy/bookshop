@@ -140,4 +140,7 @@ return [
     'min' => 'Giá dưới',
     'max' => 'Giá trên',
     'edit_range' => 'Chỉnh sửa khoảng giá',
+    'chart_books' => 'Thống kê đơn hàng',
+    'total_books' => 'Tổng đơn hàng',
+    'cat_books' => 'Thống kê sách theo thể loại',
 ];

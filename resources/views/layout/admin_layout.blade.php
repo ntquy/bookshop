@@ -131,7 +131,7 @@
                     </li>
                     @if($user_session->role == 2)
                     <li>
-                        <a href="#" class="waves-effect"><i class="glyphicon glyphicon-signal fa-fw" aria-hidden="true"></i><span class="hide-menu">{{ trans('common.statistic')}}</span></a>
+                        <a href="{{ route('chart') }}" class="waves-effect"><i class="glyphicon glyphicon-signal fa-fw" aria-hidden="true"></i><span class="hide-menu">{{ trans('common.statistic')}}</span></a>
                     </li>
                     @endif
                 </ul>

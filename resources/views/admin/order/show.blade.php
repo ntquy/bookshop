@@ -81,7 +81,7 @@
                                                     <b>
                                                         {{ trans('common.customer_name') }} :
                                                     </b>
-                                                    {{ $order->user->name }}
+                                                    {{ $order->name_ship }}
                                                 </h3>
                                                 <h3>
                                                     <b>

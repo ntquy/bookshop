@@ -33,6 +33,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'check'], function() {
 	Route::resource('/publishers', 'PublisherController');
 	Route::resource('/statistics' , 'StatisticController');
 	Route::resource('/prices' , 'PriceRange');
+	Route::get('/chart', 'ChartController@index')->name('chart');
 });
 Route::get('/sale', 'SaleController@index');
 Route::get('/search', 'HomeController@getSearch');

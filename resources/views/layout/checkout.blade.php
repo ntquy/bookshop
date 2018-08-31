@@ -3,7 +3,7 @@
 
 @section('content')
 <section class="row-fluid">
-	@if(empty($orders) != false)
+	@if(count($orders) != 0)
 	<table class="table table-bordered table-hover table-responsive" id="order_table">
 		<thead>
 			<tr>
